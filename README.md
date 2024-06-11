@@ -18,3 +18,8 @@ Ce programme calcule la similarité entre un nom de pays fourni en entrée et le
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tetis-nlp/landmatrix-graphql-python/blob/main/notebooks/Corresponding_Similarity.ipynb)
 
+# 3. Adapter les large language models (LLMs) using In-Context learning
+
+Pour adapter les large language models (LLMs) tels que llama3 et mixtral, nous utilisons l'apprentissage en contexte (in-context learning) afin de générer des requêtes GraphQL correctes pour interroger la base de données Land Matrix.
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tetis-nlp/landmatrix-graphql-python/blob/main/notebooks/In_Context_Learning.ipynb)
