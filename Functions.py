@@ -1,6 +1,7 @@
 import requests
 import pandas as pd
 import ast
+import os
 
 ###################### Récupérer les réponses des requêtes GraphQL ###################
 
@@ -196,6 +197,7 @@ def calculate_metrics(df):
     false_negatives = df['FN'].sum()
     
     
+    
     precision = true_positives / (true_positives + false_positives)
     recall = true_positives / (true_positives + false_negatives)
     accuracy = true_positives / len(df)
@@ -209,8 +211,52 @@ def calculate_metrics(df):
     print("TP: ",true_positives)
     print("FP: ",false_positives )
     print("FN: ",false_negatives)
- 
+
+#################################################################
+def calculate_metrics_return(df):
+
+    true_positives  = df['TP'].sum()
+    false_positives = df['FP'].sum()
+    false_negatives = df['FN'].sum()
+    mean_tp_value   = df['TP_value'].mean()
+    
+    precision = true_positives / (true_positives + false_positives)
+    recall = true_positives / (true_positives + false_negatives)
+    accuracy = true_positives / len(df)
+    
+    f1_score = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0
+    
+    return precision, recall, accuracy, f1_score, mean_tp_value
+
+#############################################################3
 
 
+def data_result(model, moyenne_Jaccard, moyenne_valid, precision, recall, accuracy, f1_score, mean_tp_value):
+    # Création d'un DataFrame avec les nouvelles valeurs
+    new_data = pd.DataFrame([{
+        'model': model, 
+        'moyenne_Jaccard': moyenne_Jaccard, 
+        'moyenne_valid': moyenne_valid, 
+        'precision': precision, 
+        'recall': recall, 
+        'accuracy': accuracy, 
+        'f1_score': f1_score,
+        'mean_tp_value': mean_tp_value
+    }])
+    
+    file_path = 'Metric_RAG_.xlsx'
+    
+    # Vérifiez si le fichier existe déjà
+    if os.path.exists(file_path):
+        # Lire le fichier existant
+        existing_data = pd.read_excel(file_path)
+        # Concaténer les nouvelles données avec les données existantes
+        df = pd.concat([existing_data, new_data], ignore_index=True)
+    else:
+        # Si le fichier n'existe pas, utilisez simplement les nouvelles données
+        df = new_data
+    
+    # Sauvegarder le DataFrame dans un fichier Excel
+    df.to_excel(file_path, index=False)
 
-
+    return df
