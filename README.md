@@ -26,7 +26,7 @@ Pour adapter les large language models (LLMs) tels que llama3 et mixtral, nous u
 
 # 4. Adapter les large language models (LLMs) pour la génération de requêtes REST en se basant sur des questions en langage naturel, en utilisant l'apprentissage contextuel (In-Context Learning), RAG et des agents LLM.
 
-## --- Agents LLM ---
+### --- Agents LLM ---
 
 La première étape impliquait l'utilisation d’une fonction pour récupérer des informations externes à partir de la base de données LMI. Ces informations représentent les valeurs que les champs de la base peuvent prendre. En raison de la taille et de la complexité de la base de données, cette fonction a étéutilisée pour extraire les valeurs des champs pertinents pour chaque question.
 
