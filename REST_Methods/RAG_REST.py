@@ -25,7 +25,7 @@ import time
 
 
 # Set the environment variables from shell environment
-#-----------------------------------------------------
+#----------------------Codestral-------------------------------
 OPENAI_API_KEY = "Your_API_KEY"
 OPENAI_CHAT_MODEL = "solidrust/Codestral-22B-v0.1-hf-AWQ"
 OPENAI_CHAT_API_URL = "https://isdm-chat.crocc.meso.umontpellier.fr/openai"
@@ -35,7 +35,7 @@ llm = ChatOpenAI(
     openai_api_base=OPENAI_CHAT_API_URL,
 )
 
-#-------------------------------------
+#-----------------------mixtral--------------
 
 # from langchain_community.chat_models import ChatOllama
 
@@ -45,6 +45,12 @@ llm = ChatOpenAI(
 
 # llm = ChatOllama(model=LLM_MODEL, base_url=LLM_API_URL,
 # headers={"Authorization": "Bearer " + LLM_JWT_BEARER,"Content-Type":"application/json",})
+
+#--------------------------llama3:8b--ollama--------------------
+
+# from langchain_community.llms import Ollama
+# MODEL = "llama3:8b"
+# llm = Ollama(model=MODEL)
 
 
 # Define variables used for processing
