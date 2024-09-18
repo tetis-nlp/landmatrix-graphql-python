@@ -22,12 +22,18 @@ model = ChatOpenAI(
 
 #-----------------------pour mixtral---------------------------------
 
-LLM_MODEL = "mixtral:8x7b-instruct-v0.1-q5_0"
-LLM_JWT_BEARER = "YOUR_API_KEY"
-LLM_API_URL = "https://chat.crocc.meso.umontpellier.fr/ollama"
+# LLM_MODEL = "mixtral:8x7b-instruct-v0.1-q5_0"
+# LLM_JWT_BEARER = "YOUR_API_KEY"
+# LLM_API_URL = "https://chat.crocc.meso.umontpellier.fr/ollama"
 
-model = ChatOllama(model=LLM_MODEL, base_url=LLM_API_URL,
-headers={"Authorization": "Bearer " + LLM_JWT_BEARER,"Content-Type":"application/json",})
+# model = ChatOllama(model=LLM_MODEL, base_url=LLM_API_URL,
+# headers={"Authorization": "Bearer " + LLM_JWT_BEARER,"Content-Type":"application/json",})
+
+#--------------------------llama3:8b--ollama--------------------
+
+# from langchain_community.llms import Ollama
+# MODEL = "llama3:8b"
+# llm = Ollama(model=MODEL)
 
 #--------------------------------------------------------
 input_file = 'Queries.xlsx'
