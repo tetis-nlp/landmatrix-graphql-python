@@ -1,4 +1,4 @@
-context = """
+context_Agent = """
 {
   "data": {
     "formfields": {
@@ -4622,7 +4622,2181 @@ for the questions about, deal size, surface, or ha use just the attribut area_ma
 
 
 
+context_for_InContext_learning = """
 
+That is the countries and their ids, so if you want to know the id of each countrie, use this, and don't use an other source :
+{
+  "data": {
+    "countries": [
+      {
+        "id": 4,
+        "name": "Afghanistan"
+      },
+      {
+        "id": 8,
+        "name": "Albania"
+      },
+      {
+        "id": 12,
+        "name": "Algeria"
+      },
+      {
+        "id": 16,
+        "name": "American Samoa"
+      },
+      {
+        "id": 20,
+        "name": "Andorra"
+      },
+      {
+        "id": 24,
+        "name": "Angola"
+      },
+      {
+        "id": 28,
+        "name": "Antigua and Barbuda"
+      },
+      {
+        "id": 31,
+        "name": "Azerbaijan"
+      },
+      {
+        "id": 32,
+        "name": "Argentina"
+      },
+      {
+        "id": 36,
+        "name": "Australia"
+      },
+      {
+        "id": 40,
+        "name": "Austria"
+      },
+      {
+        "id": 44,
+        "name": "Bahamas"
+      },
+      {
+        "id": 48,
+        "name": "Bahrain"
+      },
+      {
+        "id": 50,
+        "name": "Bangladesh"
+      },
+      {
+        "id": 51,
+        "name": "Armenia"
+      },
+      {
+        "id": 52,
+        "name": "Barbados"
+      },
+      {
+        "id": 56,
+        "name": "Belgium"
+      },
+      {
+        "id": 60,
+        "name": "Bermuda"
+      },
+      {
+        "id": 64,
+        "name": "Bhutan"
+      },
+      {
+        "id": 68,
+        "name": "Bolivia"
+      },
+      {
+        "id": 70,
+        "name": "Bosnia and Herzegovina"
+      },
+      {
+        "id": 72,
+        "name": "Botswana"
+      },
+      {
+        "id": 76,
+        "name": "Brazil"
+      },
+      {
+        "id": 84,
+        "name": "Belize"
+      },
+      {
+        "id": 90,
+        "name": "Solomon Islands"
+      },
+      {
+        "id": 92,
+        "name": "British Virgin Islands"
+      },
+      {
+        "id": 96,
+        "name": "Brunei Darussalam"
+      },
+      {
+        "id": 100,
+        "name": "Bulgaria"
+      },
+      {
+        "id": 104,
+        "name": "Myanmar"
+      },
+      {
+        "id": 108,
+        "name": "Burundi"
+      },
+      {
+        "id": 112,
+        "name": "Belarus"
+      },
+      {
+        "id": 116,
+        "name": "Cambodia"
+      },
+      {
+        "id": 120,
+        "name": "Cameroon"
+      },
+      {
+        "id": 124,
+        "name": "Canada"
+      },
+      {
+        "id": 132,
+        "name": "Cape Verde"
+      },
+      {
+        "id": 136,
+        "name": "Cayman Islands"
+      },
+      {
+        "id": 140,
+        "name": "Central African Republic"
+      },
+      {
+        "id": 144,
+        "name": "Sri Lanka"
+      },
+      {
+        "id": 148,
+        "name": "Chad"
+      },
+      {
+        "id": 152,
+        "name": "Chile"
+      },
+      {
+        "id": 156,
+        "name": "China"
+      },
+      {
+        "id": 170,
+        "name": "Colombia"
+      },
+      {
+        "id": 174,
+        "name": "Comoros"
+      },
+      {
+        "id": 175,
+        "name": "Mayotte"
+      },
+      {
+        "id": 178,
+        "name": "Congo, Rep."
+      },
+      {
+        "id": 180,
+        "name": "Congo, Dem. Rep."
+      },
+       {
+        "id": 184,
+        "name": "Cook Islands"
+      },
+      {
+        "id": 188,
+        "name": "Costa Rica"
+      },
+      {
+        "id": 191,
+        "name": "Croatia"
+      },
+      {
+        "id": 192,
+        "name": "Cuba"
+      },
+      {
+        "id": 196,
+        "name": "Cyprus"
+      },
+      {
+        "id": 203,
+        "name": "Czech Republic"
+      },
+      {
+        "id": 204,
+        "name": "Benin"
+      },
+      {
+        "id": 208,
+        "name": "Denmark"
+      },
+      {
+        "id": 212,
+        "name": "Dominica"
+      },
+      {
+        "id": 214,
+        "name": "Dominican Republic"
+      },
+      {
+        "id": 218,
+        "name": "Ecuador"
+      },
+      {
+        "id": 222,
+        "name": "El Salvador"
+      },
+      {
+        "id": 226,
+        "name": "Equatorial Guinea"
+      },
+      {
+        "id": 231,
+        "name": "Ethiopia"
+      },
+      {
+        "id": 232,
+        "name": "Eritrea"
+      },
+      {
+        "id": 233,
+        "name": "Estonia"
+      },
+      {
+        "id": 234,
+        "name": "Faeroe Islands"
+      },
+      {
+        "id": 238,
+        "name": "Falkland Islands (Malvinas)"
+      },
+      
+{
+        "id": 242,
+        "name": "Fiji"
+      },
+      {
+        "id": 246,
+        "name": "Finland"
+      },
+      {
+        "id": 248,
+        "name": "Åland Islands"
+      },
+      {
+        "id": 250,
+        "name": "France"
+      },
+      {
+        "id": 254,
+        "name": "French Guiana"
+      },
+      {
+        "id": 258,
+        "name": "French Polynesia"
+      },
+      {
+        "id": 262,
+        "name": "Djibouti"
+      },
+      {
+        "id": 266,
+        "name": "Gabon"
+      },
+      {
+        "id": 268,
+        "name": "Georgia"
+      },
+      {
+        "id": 270,
+        "name": "Gambia, The"
+      },
+      {
+        "id": 275,
+        "name": "West Bank and Gaza"
+      },
+      {
+        "id": 276,
+        "name": "Germany"
+      },
+      {
+        "id": 288,
+        "name": "Ghana"
+      },
+      {
+        "id": 292,
+        "name": "Gibraltar"
+      },
+      {
+        "id": 296,
+        "name": "Kiribati"
+      },
+      {
+        "id": 300,
+        "name": "Greece"
+      },
+      {
+        "id": 304,
+        "name": "Greenland"
+      },
+      {
+        "id": 308,
+        "name": "Grenada"
+      },
+      {
+        "id": 312,
+        "name": "Guadeloupe"
+      },
+      {
+        "id": 316,
+        "name": "Guam"
+      },
+      {
+        "id": 320,
+        "name": "Guatemala"
+      },
+      {
+        "id": 324,
+        "name": "Guinea"
+      },
+      {
+        "id": 328,
+        "name": "Guyana"
+      },
+      {
+        "id": 332,
+        "name": "Haiti"
+      },
+      {
+        "id": 336,
+        "name": "Holy See"
+      },
+      {
+        "id": 340,
+        "name": "Honduras"
+      },
+      {
+        "id": 344,
+        "name": "China, Hong Kong Special Administrative Region"
+      },
+      {
+        "id": 348,
+        "name": "Hungary"
+      },
+      {
+        "id": 352,
+        "name": "Iceland"
+      },
+      {
+        "id": 356,
+        "name": "India"
+      },
+      {
+        "id": 360,
+        "name": "Indonesia"
+      },
+      {
+        "id": 364,
+        "name": "Iran, Islamic Rep."
+      },
+      {
+        "id": 368,
+        "name": "Iraq"
+      },
+      {
+        "id": 372,
+        "name": "Ireland"
+      },
+      {
+        "id": 376,
+        "name": "Israel"
+      },
+      {
+        "id": 380,
+        "name": "Italy"
+      },
+      {
+        "id": 384,
+        "name": "Côte d'Ivoire"
+      },
+      {
+        "id": 388,
+        "name": "Jamaica"
+      },
+      {
+        "id": 392,
+        "name": "Japan"
+      },
+      {
+        "id": 398,
+        "name": "Kazakhstan"
+      },
+      {
+        "id": 400,
+        "name": "Jordan"
+      },
+      {
+        "id": 404,
+        "name": "Kenya"
+      },
+      {
+        "id": 408,
+        "name": "Korea, Dem. People's Rep."
+      },
+      {
+        "id": 410,
+        "name": "Republic of Korea"
+      },
+      {
+        "id": 414,
+        "name": "Kuwait"
+      },
+      {
+        "id": 417,
+        "name": "Kyrgyz Republic"
+      },
+      {
+        "id": 418,
+        "name": "Lao PDR"
+      },
+      {
+        "id": 422,
+        "name": "Lebanon"
+      },
+      {
+        "id": 426,
+        "name": "Lesotho"
+      },
+      {
+        "id": 428,
+        "name": "Latvia"
+      },
+      {
+        "id": 430,
+        "name": "Liberia"
+      },
+      {
+        "id": 434,
+        "name": "Libya"
+      },
+      {
+        "id": 438,
+        "name": "Liechtenstein"
+      },
+      {
+        "id": 440,
+        "name": "Lithuania"
+      },
+      {
+        "id": 442,
+        "name": "Luxembourg"
+      },
+      {
+        "id": 446,
+        "name": "China, Macao Special Administrative Region"
+      },
+      {
+        "id": 450,
+        "name": "Madagascar"
+      },
+      {
+        "id": 454,
+        "name": "Malawi"
+      },
+      {
+        "id": 458,
+        "name": "Malaysia"
+      },
+      {
+        "id": 462,
+        "name": "Maldives"
+      },
+      {
+        "id": 466,
+        "name": "Mali"
+      },
+      {
+        "id": 470,
+        "name": "Malta"
+      },
+      {
+        "id": 474,
+        "name": "Martinique"
+      },
+      {
+        "id": 478,
+        "name": "Mauritania"
+      },
+      {
+        "id": 480,
+        "name": "Mauritius"
+      },
+      {
+        "id": 484,
+        "name": "Mexico"
+      },
+      {
+        "id": 492,
+        "name": "Monaco"
+      },
+      {
+        "id": 496,
+        "name": "Mongolia"
+      },
+      {
+        "id": 498,
+        "name": "Moldova"
+      },
+      {
+        "id": 499,
+        "name": "Montenegro"
+      },
+      {
+        "id": 500,
+        "name": "Montserrat"
+      },
+      {
+        "id": 504,
+        "name": "Morocco"
+      },
+      {
+        "id": 508,
+        "name": "Mozambique"
+      },
+      {
+        "id": 512,
+        "name": "Oman"
+      },
+      {
+        "id": 516,
+        "name": "Namibia"
+      },
+      {
+        "id": 520,
+        "name": "Nauru"
+      },
+      {
+        "id": 524,
+        "name": "Nepal"
+      },
+      {
+        "id": 528,
+        "name": "Netherlands"
+      },
+      {
+        "id": 531,
+        "name": "Curaçao"
+      },
+      {
+        "id": 533,
+        "name": "Aruba"
+      },
+      {
+        "id": 534,
+        "name": "Sint Maarten (Dutch part)"
+      },
+      {
+        "id": 535,
+        "name": "Bonaire, Saint Eustatius and Saba"
+      },
+      {
+        "id": 540,
+        "name": "New Caledonia"
+      },
+      {
+        "id": 548,
+        "name": "Vanuatu"
+      },
+      {
+        "id": 554,
+        "name": "New Zealand"
+      },
+      {
+        "id": 558,
+        "name": "Nicaragua"
+      },
+      {
+        "id": 562,
+        "name": "Niger"
+      },
+      {
+        "id": 566,
+        "name": "Nigeria"
+      },
+      {
+        "id": 570,
+        "name": "Niue"
+      },
+      {
+        "id": 574,
+        "name": "Norfolk Island"
+      },
+      {
+        "id": 578,
+        "name": "Norway"
+      },
+      {
+        "id": 580,
+        "name": "Northern Mariana Islands"
+      },
+      {
+        "id": 583,
+        "name": "Micronesia, Fed. Sts."
+      },
+      {
+        "id": 584,
+        "name": "Marshall Islands"
+      },
+      {
+        "id": 585,
+        "name": "Palau"
+      },
+      {
+        "id": 586,
+        "name": "Pakistan"
+      },
+      {
+        "id": 591,
+        "name": "Panama"
+      },
+      {
+        "id": 598,
+        "name": "Papua New Guinea"
+      },
+      {
+        "id": 600,
+        "name": "Paraguay"
+      },
+      {
+        "id": 604,
+        "name": "Peru"
+      },
+      {
+        "id": 608,
+        "name": "Philippines"
+      },
+      {
+        "id": 612,
+        "name": "Pitcairn"
+      },
+      {
+        "id": 616,
+        "name": "Poland"
+      },
+      {
+        "id": 620,
+        "name": "Portugal"
+      },
+      {
+        "id": 624,
+        "name": "Guinea-Bissau"
+      },
+      {
+        "id": 626,
+        "name": "Timor-Leste"
+      },
+      {
+        "id": 630,
+        "name": "Puerto Rico"
+      },
+      {
+        "id": 634,
+        "name": "Qatar"
+      },
+      {
+        "id": 638,
+        "name": "Réunion"
+      },
+      {
+        "id": 642,
+        "name": "Romania"
+      },
+      {
+        "id": 643,
+        "name": "Russian Federation"
+      },
+      {
+        "id": 646,
+        "name": "Rwanda"
+      },
+      {
+        "id": 652,
+        "name": "Saint-Barthélemy"
+      },
+      {
+        "id": 654,
+        "name": "Saint Helena"
+      },
+      {
+        "id": 659,
+        "name": "St. Kitts and Nevis"
+      },
+      {
+        "id": 660,
+        "name": "Anguilla"
+      },
+      {
+        "id": 662,
+        "name": "St. Lucia"
+      },
+      {
+        "id": 663,
+        "name": "Saint-Martin (French part)"
+      },
+      {
+        "id": 666,
+        "name": "Saint Pierre and Miquelon"
+      },
+      {
+        "id": 670,
+        "name": "St. Vincent and the Grenadines"
+      },
+      {
+        "id": 674,
+        "name": "San Marino"
+      },
+      {
+        "id": 678,
+        "name": "São Tomé and Principe"
+      },
+      {
+        "id": 680,
+        "name": "Sark"
+      },
+      {
+        "id": 682,
+        "name": "Saudi Arabia"
+      },
+      {
+        "id": 686,
+        "name": "Senegal"
+      },
+      {
+        "id": 688,
+        "name": "Serbia"
+      },
+      {
+        "id": 690,
+        "name": "Seychelles"
+      },
+      {
+        "id": 694,
+        "name": "Sierra Leone"
+      },
+      
+      {
+        "id": 702,
+        "name": "Singapore"
+      },
+      {
+        "id": 703,
+        "name": "Slovakia"
+      },
+      {
+        "id": 704,
+        "name": "Vietnam"
+      },
+      {
+        "id": 705,
+        "name": "Slovenia"
+      },
+      {
+        "id": 706,
+        "name": "Somalia"
+      },
+      {
+        "id": 710,
+        "name": "South Africa"
+      },
+      {
+        "id": 716,
+        "name": "Zimbabwe"
+      },
+      {
+        "id": 724,
+        "name": "Spain"
+      },
+      {
+        "id": 728,
+        "name": "South Sudan"
+      },
+      {
+        "id": 729,
+        "name": "Sudan"
+      },
+      {
+        "id": 732,
+        "name": "Western Sahara"
+      },
+      {
+        "id": 740,
+        "name": "Suriname"
+      },
+      {
+        "id": 744,
+        "name": "Svalbard and Jan Mayen Islands"
+      },
+      {
+        "id": 748,
+        "name": "Swaziland"
+      },
+      {
+        "id": 752,
+        "name": "Sweden"
+      },
+      {
+        "id": 756,
+        "name": "Switzerland"
+      },
+      {
+        "id": 760,
+        "name": "Syrian Arab Republic"
+      },
+      {
+        "id": 762,
+        "name": "Tajikistan"
+      },
+      {
+        "id": 764,
+        "name": "Thailand"
+      },
+      {
+        "id": 768,
+        "name": "Togo"
+      },
+      {
+        "id": 772,
+        "name": "Tokelau"
+      },
+      {
+        "id": 776,
+        "name": "Tonga"
+      },
+      {
+        "id": 780,
+        "name": "Trinidad and Tobago"
+      },
+      {
+        "id": 784,
+        "name": "United Arab Emirates"
+      },
+      {
+        "id": 788,
+        "name": "Tunisia"
+      },
+      {
+        "id": 792,
+        "name": "Türkiye"
+      },
+      {
+        "id": 795,
+        "name": "Turkmenistan"
+      },
+      {
+        "id": 796,
+        "name": "Turks and Caicos Islands"
+      },
+      {
+        "id": 798,
+        "name": "Tuvalu"
+      },
+      {
+        "id": 800,
+        "name": "Uganda"
+      },
+      {
+        "id": 804,
+        "name": "Ukraine"
+      },
+      
+       {
+        "id": 807,
+        "name": "North Macedonia"
+      },
+      {
+        "id": 818,
+        "name": "Egypt, Arab Rep."
+      },
+      {
+        "id": 826,
+        "name": "United Kingdom of Great Britain and Northern Ireland"
+      },
+      {
+        "id": 831,
+        "name": "Guernsey"
+      },
+      {
+        "id": 832,
+        "name": "Jersey"
+      },
+      {
+        "id": 833,
+        "name": "Isle of Man"
+      },
+      {
+        "id": 834,
+        "name": "Tanzania"
+      },
+      {
+        "id": 840,
+        "name": "United States of America"
+      },
+      {
+        "id": 850,
+        "name": "United States Virgin Islands"
+      },
+      {
+        "id": 854,
+        "name": "Burkina Faso"
+      },
+      {
+        "id": 858,
+        "name": "Uruguay"
+      },
+      {
+        "id": 860,
+        "name": "Uzbekistan"
+      },
+      {
+        "id": 862,
+        "name": "Venezuela, RB"
+      },
+      {
+        "id": 876,
+        "name": "Wallis and Futuna Islands"
+      },
+      {
+        "id": 882,
+        "name": "Samoa"
+      },
+      {
+        "id": 887,
+        "name": "Yemen, Rep."
+      },
+      {
+        "id": 894,
+        "name": "Zambia"
+      }
+    ]
+  }
+}
+#######################################################################################################################################################
+
+That is the regions and their ids, so if you want to know the id of each region, use this, and don't use an other source :
+
+{
+  "data": {
+    "regions": [
+      {
+        "id": 2,
+        "name": "Africa"
+      },
+      {
+        "id": 9,
+        "name": "Oceania"
+      },
+      {
+        "id": 21,
+        "name": "Northern America"
+      },
+      {
+        "id": 142,
+        "name": "Asia"
+      },
+      {
+        "id": 150,
+        "name": "Eastern Europe"
+      },
+      {
+        "id": 419,
+        "name": "Latin America and the Caribbean"
+      }
+    ]
+  }
+}
+
+################################################################################################################################################"
+
+
+values that can take the attributes:
+
+{
+  "data": {
+    "formfields": {
+      "deal": {
+        "locations": {
+          "label": "Locations",
+          "class": "JSONSchemaFormField",
+          "required": false
+        },
+        "country": {
+          "label": "Target country",
+          "class": "CountryForeignKey",
+          "required": false,
+          "related_model": "Country"
+        },
+        "contract_size": {
+          "label": "Size under contract (leased or purchased area, in ha)",
+          "class": "JSONDateAreaField",
+          "required": false
+        },
+        "intention_of_investment": {
+          "label": "Intention of investment",
+          "class": "JSONDateAreaChoicesField",
+          "required": false,
+          "choices": [
+            {
+              "value": "BIOFUELS",
+              "label": "Biomass for biofuels",
+              "group": "Agriculture"
+            },
+            {
+              "value": "BIOMASS_ENERGY_GENERATION",
+              "label": "Biomass for energy generation (agriculture)",
+              "group": "Agriculture"
+            },
+            {
+              "value": "FODDER",
+              "label": "Fodder",
+              "group": "Agriculture"
+            },
+            {
+              "value": "FOOD_CROPS",
+              "label": "Food crops",
+              "group": "Agriculture"
+            },
+            {
+              "value": "LIVESTOCK",
+              "label": "Livestock",
+              "group": "Agriculture"
+            },
+            {
+              "value": "NON_FOOD_AGRICULTURE",
+              "label": "Non-food agricultural commodities",
+              "group": "Agriculture"
+            },
+            {
+              "value": "AGRICULTURE_UNSPECIFIED",
+              "label": "Agriculture unspecified",
+              "group": "Agriculture"
+            },
+            {
+              "value": "BIOMASS_ENERGY_PRODUCTION",
+              "label": "Biomass for energy generation (forestry)",
+              "group": "Forestry"
+            },
+            {
+              "value": "CARBON",
+              "label": "For carbon sequestration/REDD",
+              "group": "Forestry"
+            },
+            {
+              "value": "FOREST_LOGGING",
+              "label": "Forest logging / management for wood and fiber",
+              "group": "Forestry"
+            },
+            {
+              "value": "TIMBER_PLANTATION",
+              "label": "Timber plantation for wood and fiber",
+              "group": "Forestry"
+            },
+            {
+              "value": "FORESTRY_UNSPECIFIED",
+              "label": "Forestry unspecified",
+              "group": "Forestry"
+            },
+            {
+              "value": "SOLAR_PARK",
+              "label": "Solar park",
+              "group": "Renewable energy power plants"
+            },
+            {
+              "value": "WIND_FARM",
+              "label": "Wind farm",
+              "group": "Renewable energy power plants"
+            },
+            {
+              "value": "RENEWABLE_ENERGY",
+              "label": "Renewable energy unspecified",
+              "group": "Renewable energy power plants"
+            },
+            {
+              "value": "CONVERSATION",
+              "label": "Conservation",
+              "group": "Other"
+            },
+            {
+              "value": "INDUSTRY",
+              "label": "Industry",
+              "group": "Other"
+            },
+            {
+              "value": "LAND_SPECULATION",
+              "label": "Land speculation",
+              "group": "Other"
+            },
+            {
+              "value": "MINING",
+              "label": "Mining",
+              "group": "Other"
+            },
+            {
+              "value": "OIL_GAS_EXTRACTION",
+              "label": "Oil / Gas extraction",
+              "group": "Other"
+            },
+            {
+              "value": "TOURISM",
+              "label": "Tourism",
+              "group": "Other"
+            },
+            {
+              "value": "OTHER",
+              "label": "Other",
+              "group": "Other"
+            }
+          ]
+        },
+       
+        "nature_of_deal": {
+          "label": "Nature of the deal",
+          "class": "SimpleArrayField",
+          "required": false,
+          "choices": [
+            {
+              "value": "",
+              "label": "---------"
+            },
+            {
+              "value": "OUTRIGHT_PURCHASE",
+              "label": "Outright purchase"
+            },
+            {
+              "value": "LEASE",
+              "label": "Lease"
+            },
+            {
+              "value": "CONCESSION",
+              "label": "Concession"
+            },
+            {
+              "value": "EXPLOITATION_PERMIT",
+              "label": "Exploitation permit / license / concession (for mineral resources)"
+            },
+            {
+              "value": "PURE_CONTRACT_FARMING",
+              "label": "Pure contract farming"
+            },
+            {
+              "value": "OTHER",
+              "label": "Other"
+            }
+          ]
+        },
+       
+        "negotiation_status": {
+          "label": "Negotiation status",
+          "class": "JSONDateChoiceField",
+          "required": false,
+          "choices": [
+            {
+              "value": "EXPRESSION_OF_INTEREST",
+              "label": "Intended (Expression of interest)"
+            },
+            {
+              "value": "UNDER_NEGOTIATION",
+              "label": "Intended (Under negotiation)"
+            },
+            {
+              "value": "MEMORANDUM_OF_UNDERSTANDING",
+              "label": "Intended (Memorandum of understanding)"
+            },
+            {
+              "value": "ORAL_AGREEMENT",
+              "label": "Concluded (Oral Agreement)"
+            },
+            {
+              "value": "CONTRACT_SIGNED",
+              "label": "Concluded (Contract signed)"
+            },
+            {
+              "value": "CHANGE_OF_OWNERSHIP",
+              "label": "Concluded (Change of ownership)"
+            },
+            {
+              "value": "NEGOTIATIONS_FAILED",
+              "label": "Failed (Negotiations failed)"
+            },
+            {
+              "value": "CONTRACT_CANCELED",
+              "label": "Failed (Contract cancelled)"
+            },
+            {
+              "value": "CONTRACT_EXPIRED",
+              "label": "Contract expired"
+            }
+          ]
+        },
+        "implementation_status": {
+          "label": "Implementation status",
+          "class": "JSONDateChoiceField",
+          "required": false,
+          "choices": [
+            {
+              "value": "PROJECT_NOT_STARTED",
+              "label": "Project not started"
+            },
+            {
+              "value": "STARTUP_PHASE",
+              "label": "Startup phase (no production)"
+            },
+            {
+              "value": "IN_OPERATION",
+              "label": "In operation (production)"
+            },
+            {
+              "value": "PROJECT_ABANDONED",
+              "label": "Project abandoned"
+            }
+          ]
+        },
+        "recognition_status": {
+          "label": "Recognition status of community land tenure",
+          "class": "SimpleArrayField",
+          "required": false,
+          "choices": [
+            {
+              "value": "",
+              "label": "---------"
+            },
+            {
+              "value": "INDIGENOUS_RIGHTS_RECOGNIZED",
+              "label": "Indigenous Peoples traditional or customary rights recognized by government"
+            },
+            {
+              "value": "INDIGENOUS_RIGHTS_NOT_RECOGNIZED",
+              "label": "Indigenous Peoples traditional or customary rights not recognized by government"
+            },
+            {
+              "value": "COMMUNITY_RIGHTS_RECOGNIZED",
+              "label": "Community traditional or customary rights recognized by government"
+            },
+            {
+              "value": "COMMUNITY_RIGHTS_NOT_RECOGNIZED",
+              "label": "Community traditional or customary rights not recognized by government"
+            }
+          ]
+        },
+        "negative_impacts": {
+          "label": "Negative impacts for local communities",
+          "class": "SimpleArrayField",
+          "required": false,
+          "choices": [
+            {
+              "value": "",
+              "label": "---------"
+            },
+            {
+              "value": "ENVIRONMENTAL_DEGRADATION",
+              "label": "Environmental degradation"
+            },
+            {
+              "value": "SOCIO_ECONOMIC",
+              "label": "Socio-economic"
+            },
+            {
+              "value": "CULTURAL_LOSS",
+              "label": "Cultural loss"
+            },
+            {
+              "value": "EVICTION",
+              "label": "Eviction"
+            },
+            {
+              "value": "DISPLACEMENT",
+              "label": "Displacement"
+            },
+            {
+              "value": "VIOLENCE",
+              "label": "Violence"
+            },
+            {
+              "value": "OTHER",
+              "label": "Other"
+            }
+          ]
+        },
+        "crops": {
+          "label": "Crops area/yield/export",
+          "class": "JSONExportsField",
+          "required": false,
+          "choices": [
+            {
+              "value": "ACC",
+              "label": "Accacia"
+            },
+            {
+              "value": "ALF",
+              "label": "Alfalfa"
+            },
+            {
+              "value": "ALG",
+              "label": "Seaweed / Macroalgae(unspecified)"
+            },
+            {
+              "value": "ALM",
+              "label": "Almond"
+            },
+            {
+              "value": "ALV",
+              "label": "Aloe Vera"
+            },
+            {
+              "value": "APL",
+              "label": "Apple"
+            },
+            {
+              "value": "AQU",
+              "label": "Aquaculture (unspecified crops)"
+            },
+            {
+              "value": "BAM",
+              "label": "Bamboo"
+            },
+            {
+              "value": "BAN",
+              "label": "Banana"
+            },
+            {
+              "value": "BEA",
+              "label": "Bean"
+            },
+            {
+              "value": "BOT",
+              "label": "Bottle Gourd"
+            },
+            {
+              "value": "BRL",
+              "label": "Barley"
+            },
+            {
+              "value": "BWT",
+              "label": "Buckwheat"
+            },
+            {
+              "value": "CAC",
+              "label": "Cacao"
+            },
+            {
+              "value": "CAS",
+              "label": "Cassava (Maniok)"
+            },
+            {
+              "value": "CAW",
+              "label": "Cashew"
+            },
+            {
+              "value": "CHA",
+              "label": "Chat"
+            },
+            {
+              "value": "CHE",
+              "label": "Cherries"
+            },
+            {
+              "value": "CNL",
+              "label": "Canola"
+            },
+            {
+              "value": "COC",
+              "label": "Coconut"
+            },
+            {
+              "value": "COF",
+              "label": "Coffee Plant"
+            },
+            {
+              "value": "COT",
+              "label": "Cotton"
+            },
+            {
+              "value": "CRL",
+              "label": "Cereals (unspecified)"
+            },
+            {
+              "value": "CRN",
+              "label": "Corn (Maize)"
+            },
+            {
+              "value": "CRO",
+              "label": "Croton"
+            },
+            {
+              "value": "CST",
+              "label": "Castor Oil Plant"
+            },
+            {
+              "value": "CTR",
+              "label": "Citrus Fruits (unspecified)"
+            },
+            {
+              "value": "DIL",
+              "label": "Dill"
+            },
+            {
+              "value": "EUC",
+              "label": "Eucalyptus"
+            },
+            {
+              "value": "FLW",
+              "label": "Flowers (unspecified)"
+            },
+            {
+              "value": "FNT",
+              "label": "Fig-Nut"
+            },
+            {
+              "value": "FOD",
+              "label": "Fodder Plants (unspecified)"
+            },
+            {
+              "value": "FOO",
+              "label": "Food crops (unspecified)"
+            },
+            {
+              "value": "FRT",
+              "label": "Fruit (unspecified)"
+            },
+            {
+              "value": "GRA",
+              "label": "Grapes"
+            },
+            {
+              "value": "GRN",
+              "label": "Grains (unspecified)"
+            },
+            {
+              "value": "HRB",
+              "label": "Herbs (unspecified)"
+            },
+            {
+              "value": "JTR",
+              "label": "Jatropha"
+            },
+            {
+              "value": "LNT",
+              "label": "Lentils"
+            },
+            {
+              "value": "MAN",
+              "label": "Mango"
+            },
+            {
+              "value": "MUS",
+              "label": "Mustard"
+            },
+            {
+              "value": "OAT",
+              "label": "Oats"
+            },
+            {
+              "value": "OIL",
+              "label": "Oil Seeds (unspecified)"
+            },
+            {
+              "value": "OLE",
+              "label": "Oleagionous plant"
+            },
+            {
+              "value": "OLV",
+              "label": "Olives"
+            },
+            {
+              "value": "ONI",
+              "label": "Onion"
+            },
+            {
+              "value": "OPL",
+              "label": "Oil Palm"
+            },
+            {
+              "value": "OTH",
+              "label": "Other crops (please specify)"
+            },
+            {
+              "value": "PAL",
+              "label": "Palms"
+            },
+            {
+              "value": "PAP",
+              "label": "Papaya"
+            },
+            {
+              "value": "PAS",
+              "label": "Passion fruit"
+            },
+            {
+              "value": "PEA",
+              "label": "Peanut (groundnut)"
+            },
+            {
+              "value": "PEP",
+              "label": "Pepper"
+            },
+            {
+              "value": "PES",
+              "label": "Peas"
+            },
+            {
+              "value": "PIE",
+              "label": "Pine"
+            },
+            {
+              "value": "PIN",
+              "label": "Pineapple"
+            },
+            {
+              "value": "PLS",
+              "label": "Pulses (unspecified)"
+            },
+            {
+              "value": "POM",
+              "label": "Pomegranate"
+            },
+            {
+              "value": "PON",
+              "label": "Pongamia Pinnata"
+            },
+            {
+              "value": "PTT",
+              "label": "Potatoes"
+            },
+            {
+              "value": "RAP",
+              "label": "Rapeseed"
+            },
+            {
+              "value": "RCH",
+              "label": "Rice (hybrid)"
+            },
+            {
+              "value": "RIC",
+              "label": "Rice"
+            },
+            {
+              "value": "ROS",
+              "label": "Roses"
+            },
+            {
+              "value": "RUB",
+              "label": "Rubber tree"
+            },
+            {
+              "value": "RYE",
+              "label": "Rye"
+            },
+            {
+              "value": "SEE",
+              "label": "Seeds Production (unspecified)"
+            },
+            {
+              "value": "SES",
+              "label": "Sesame"
+            },
+            {
+              "value": "SOR",
+              "label": "Sorghum"
+            },
+            {
+              "value": "SOY",
+              "label": "Soya Beans"
+            },
+            {
+              "value": "SPI",
+              "label": "Spices (unspecified)"
+            },
+            {
+              "value": "SSL",
+              "label": "Sisal"
+            },
+            {
+              "value": "SUB",
+              "label": "Sugar beet"
+            },
+            {
+              "value": "SUC",
+              "label": "Sugar Cane"
+            },
+            {
+              "value": "SUG",
+              "label": "Sugar (unspecified)"
+            },
+            {
+              "value": "SUN",
+              "label": "Sun Flower"
+            },
+            {
+              "value": "SWP",
+              "label": "Sweet Potatoes"
+            },
+            {
+              "value": "TBC",
+              "label": "Tobacco"
+            },
+            {
+              "value": "TEA",
+              "label": "Tea"
+            },
+            {
+              "value": "TEF",
+              "label": "Teff"
+            },
+            {
+              "value": "TEK",
+              "label": "Teak"
+            },
+            {
+              "value": "TOM",
+              "label": "Tomatoes"
+            },
+            {
+              "value": "TRE",
+              "label": "Trees (unspecified)"
+            },
+            {
+              "value": "VGT",
+              "label": "Vegetables (unspecified)"
+            },
+            {
+              "value": "VIN",
+              "label": "Vineyard"
+            },
+            {
+              "value": "WHT",
+              "label": "Wheat"
+            },
+            {
+              "value": "YAM",
+              "label": "Yam"
+            }
+          ]
+        },
+        "animals": {
+          "label": "Livestock area/yield/export",
+          "class": "JSONExportsField",
+          "required": false,
+          "choices": [
+            {
+              "value": "AQU",
+              "label": "Aquaculture (animals)"
+            },
+            {
+              "value": "BEE",
+              "label": "Beef Cattle"
+            },
+            {
+              "value": "CTL",
+              "label": "Cattle"
+            },
+            {
+              "value": "DCT",
+              "label": "Dairy Cattle"
+            },
+            {
+              "value": "FSH",
+              "label": "Fish"
+            },
+            {
+              "value": "GOT",
+              "label": "Goats"
+            },
+            {
+              "value": "OTH",
+              "label": "Other livestock (please specify)"
+            },
+            {
+              "value": "PIG",
+              "label": "Pork"
+            },
+            {
+              "value": "POU",
+              "label": "Poultry"
+            },
+            {
+              "value": "SHP",
+              "label": "Sheep"
+            },
+            {
+              "value": "SHR",
+              "label": "Shrimp"
+            }
+          ]
+        },
+        "mineral_resources": {
+          "label": "Mineral resources area/yield/export",
+          "class": "JSONExportsField",
+          "required": false,
+          "choices": [
+            {
+              "value": "ALU",
+              "label": "Aluminum"
+            },
+            {
+              "value": "ASP",
+              "label": "Asphaltite"
+            },
+            {
+              "value": "ATC",
+              "label": "Anthracite"
+            },
+            {
+              "value": "BAR",
+              "label": "Barite"
+            },
+            {
+              "value": "BAS",
+              "label": "Basalt"
+            },
+            {
+              "value": "BAX",
+              "label": "Bauxite"
+            },
+            {
+              "value": "BEN",
+              "label": "Bentonite"
+            },
+            {
+              "value": "BUM",
+              "label": "Building materials"
+            },
+            {
+              "value": "CAR",
+              "label": "Carbon"
+            },
+            {
+              "value": "CHR",
+              "label": "Chromite"
+            },
+            {
+              "value": "CLA",
+              "label": "Clay"
+            },
+            {
+              "value": "COA",
+              "label": "Coal"
+            },
+            {
+              "value": "COB",
+              "label": "Cobalt"
+            },
+            {
+              "value": "COP",
+              "label": "Copper"
+            },
+            {
+              "value": "DIA",
+              "label": "Diamonds"
+            },
+            {
+              "value": "EME",
+              "label": "Emerald"
+            },
+            {
+              "value": "FLD",
+              "label": "Feldspar"
+            },
+            {
+              "value": "FLO",
+              "label": "Fluoride"
+            },
+            {
+              "value": "GAS",
+              "label": "Gas"
+            },
+            {
+              "value": "GLD",
+              "label": "Gold"
+            },
+            {
+              "value": "GRT",
+              "label": "Granite"
+            },
+            {
+              "value": "GRV",
+              "label": "Gravel"
+            },
+            {
+              "value": "HEA",
+              "label": "Heavy Mineral Sands"
+            },
+            {
+              "value": "ILM",
+              "label": "Ilmenite"
+            },
+            {
+              "value": "IRO",
+              "label": "Iron"
+            },
+            {
+              "value": "JAD",
+              "label": "Jade"
+            },
+            {
+              "value": "LED",
+              "label": "Lead"
+            },
+            {
+              "value": "LIM",
+              "label": "Limestone"
+            },
+            {
+              "value": "LIT",
+              "label": "Lithium"
+            },
+            {
+              "value": "MAG",
+              "label": "Magnetite"
+            },
+            {
+              "value": "MBD",
+              "label": "Molybdenum"
+            },
+            {
+              "value": "MGN",
+              "label": "Manganese"
+            },
+            {
+              "value": "MRB",
+              "label": "Marble"
+            },
+            {
+              "value": "NIK",
+              "label": "Nickel"
+            },
+            {
+              "value": "OTH",
+              "label": "Other minerals (please specify)"
+            },
+            {
+              "value": "PET",
+              "label": "Petroleum"
+            },
+            {
+              "value": "PHP",
+              "label": "Phosphorous"
+            },
+            {
+              "value": "PLT",
+              "label": "Platinum"
+            },
+            {
+              "value": "PUM",
+              "label": "Hydrocarbons (e.g. crude oil)"
+            },
+            {
+              "value": "PYR",
+              "label": "Pyrolisis Plant"
+            },
+            {
+              "value": "RUT",
+              "label": "Rutile"
+            },
+            {
+              "value": "SAN",
+              "label": "Sand"
+            },
+            {
+              "value": "SIC",
+              "label": "Silica"
+            },
+            {
+              "value": "SIL",
+              "label": "Silver"
+            },
+            {
+              "value": "SLT",
+              "label": "Salt"
+            },
+            {
+              "value": "STO",
+              "label": "Stone"
+            },
+            {
+              "value": "TIN",
+              "label": "Tin"
+            },
+            {
+              "value": "TTM",
+              "label": "Titanium"
+            },
+            {
+              "value": "URM",
+              "label": "Uranium"
+            },
+            {
+              "value": "ZNC",
+              "label": "Zinc"
+            }
+          ]
+        },
+        "current_contract_size": {
+          "label": "Current contract size",
+          "class": "DecimalField",
+          "required": false,
+          "unit": "ha"
+        },
+        "current_production_size": {
+          "label": "Current production size",
+          "class": "DecimalField",
+          "required": false
+        },
+        "intention_of_investment": {
+          "label": "intention of investment",
+          "class": "SimpleArrayField",
+          "required": false,
+          "choices": [
+            {
+              "value": "",
+              "label": "---------"
+            },
+            {
+              "value": "BIOFUELS",
+              "label": "Biomass for biofuels"
+            },
+            {
+              "value": "BIOMASS_ENERGY_GENERATION",
+              "label": "Biomass for energy generation (agriculture)"
+            },
+            {
+              "value": "FODDER",
+              "label": "Fodder"
+            },
+            {
+              "value": "FOOD_CROPS",
+              "label": "Food crops"
+            },
+            {
+              "value": "LIVESTOCK",
+              "label": "Livestock"
+            },
+            {
+              "value": "NON_FOOD_AGRICULTURE",
+              "label": "Non-food agricultural commodities"
+            },
+            {
+              "value": "AGRICULTURE_UNSPECIFIED",
+              "label": "Agriculture unspecified"
+            },
+            {
+              "value": "BIOMASS_ENERGY_PRODUCTION",
+              "label": "Biomass for energy generation (forestry)"
+            },
+            {
+              "value": "CARBON",
+              "label": "For carbon sequestration/REDD"
+            },
+            {
+              "value": "FOREST_LOGGING",
+              "label": "Forest logging / management for wood and fiber"
+            },
+            {
+              "value": "TIMBER_PLANTATION",
+              "label": "Timber plantation for wood and fiber"
+            },
+            {
+              "value": "FORESTRY_UNSPECIFIED",
+              "label": "Forestry unspecified"
+            },
+            {
+              "value": "SOLAR_PARK",
+              "label": "Solar park"
+            },
+            {
+              "value": "WIND_FARM",
+              "label": "Wind farm"
+            },
+            {
+              "value": "RENEWABLE_ENERGY",
+              "label": "Renewable energy unspecified"
+            },
+            {
+              "value": "CONVERSATION",
+              "label": "Conservation"
+            },
+            {
+              "value": "INDUSTRY",
+              "label": "Industry"
+            },
+            {
+              "value": "LAND_SPECULATION",
+              "label": "Land speculation"
+            },
+            {
+              "value": "MINING",
+              "label": "Mining"
+            },
+            {
+              "value": "OIL_GAS_EXTRACTION",
+              "label": "Oil / Gas extraction"
+            },
+            {
+              "value": "TOURISM",
+              "label": "Tourism"
+            },
+            {
+              "value": "OTHER",
+              "label": "Other"
+            }
+          ]
+        },
+        "negotiation_status": {
+          "label": "negotiation status",
+          "class": "TypedChoiceField",
+          "required": false,
+          "choices": [
+            {
+              "value": "",
+              "label": "---------"
+            },
+            {
+              "value": "EXPRESSION_OF_INTEREST",
+              "label": "Intended (Expression of interest)"
+            },
+            {
+              "value": "UNDER_NEGOTIATION",
+              "label": "Intended (Under negotiation)"
+            },
+            {
+              "value": "MEMORANDUM_OF_UNDERSTANDING",
+              "label": "Intended (Memorandum of understanding)"
+            },
+            {
+              "value": "ORAL_AGREEMENT",
+              "label": "Concluded (Oral Agreement)"
+            },
+            {
+              "value": "CONTRACT_SIGNED",
+              "label": "Concluded (Contract signed)"
+            },
+            {
+              "value": "CHANGE_OF_OWNERSHIP",
+              "label": "Concluded (Change of ownership)"
+            },
+            {
+              "value": "NEGOTIATIONS_FAILED",
+              "label": "Failed (Negotiations failed)"
+            },
+            {
+              "value": "CONTRACT_CANCELED",
+              "label": "Failed (Contract cancelled)"
+            },
+            {
+              "value": "CONTRACT_EXPIRED",
+              "label": "Contract expired"
+            }
+          ]
+        },
+        "implementation_status": {
+          "label": "implementation status",
+          "class": "TypedChoiceField",
+          "required": false,
+          "choices": [
+            {
+              "value": "",
+              "label": "---------"
+            },
+            {
+              "value": "PROJECT_NOT_STARTED",
+              "label": "Project not started"
+            },
+            {
+              "value": "STARTUP_PHASE",
+              "label": "Startup phase (no production)"
+            },
+            {
+              "value": "IN_OPERATION",
+              "label": "In operation (production)"
+            },
+            {
+              "value": "PROJECT_ABANDONED",
+              "label": "Project abandoned"
+            }
+          ]
+        },
+        "area_max": {
+          "label": "area_max",
+          "class": "DecimalField",
+          "required": false,
+          "unit": "ha"
+        },
+        "area_min": {
+          "label": "area_min",
+          "class": "DecimalField",
+          "required": false,
+          "unit": "ha"
+        },
+        "created_at": {
+          "label": "Created",
+          "class": "DateTimeField",
+          "required": false
+        }
+      }
+    }
+  }
+}
+
+################################################################################################################################
+
+exemple question: Where are the investments in Agriculture?
+
+response: 
+https://landmatrix.org/api/deals/?intention_of_investment=BIOFUELS&intention_of_investment=BIOMASS_ENERGY_GENERATION&intention_of_investment=FODDER&intention_of_investment=FOOD_CROPS&intention_of_investment=LIVESTOCK&intention_of_investment=NON_FOOD_AGRICULTURE&intention_of_investment=AGRICULTURE_UNSPECIFIED
+
+
+exemple question: How much land will be taken by forthcoming deals? 
+
+response:
+https://landmatrix.org/api/deals/?implementation_status=PROJECT_NOT_STARTED
+
+
+exemple question: What types of investment exist in Argentina since 2010?
+
+response:
+https://landmatrix.org/api/deals/?country_id=32&initiation_year_min=2010&initiation_year_null=true
+
+
+exemple question: What is the size in operation?
+
+response:
+https://landmatrix.org/api/deals/?implementation_status=IN_OPERATION
+
+
+
+exemple question: Where is renewable energy produced?
+
+response:
+https://landmatrix.org/api/deals/?intention_of_investment=SOLAR_PARK&intention_of_investment=WIND_FARM&intention_of_investment=RENEWABLE_ENERGY
+
+#############################################################################################################################################
+
+for the questions about, deal size, surface, or ha use just the attribut area_max or area_min, not use something different like deal_size.......
+
+
+"""
 
 
 
