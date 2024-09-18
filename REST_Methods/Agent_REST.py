@@ -55,7 +55,7 @@ headers={"Authorization": "Bearer " + LLM_JWT_BEARER,"Content-Type":"application
 
 # Define variables used for processing
 #-------------------------------------
-context = Context_REST.context
+context = Context_REST.context_Agent
 data    = json.loads(context)
 regions = Context_REST.regions
 countries = Context_REST.countries
