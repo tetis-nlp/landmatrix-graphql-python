@@ -46,7 +46,7 @@ Le dossier REST_Methods contient:
 
 Les méthodes utilisées pour générer des requêtes REST à partir de questions en langage naturel, nous avons travaillé sur In_Context_learning: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tetis-nlp/landmatrix-graphql-python/blob/main/REST_Methods/In_Context_Learning_REST.py), RAG: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tetis-nlp/landmatrix-graphql-python/blob/main/REST_Methods/RAG_REST.py) et Agent: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tetis-nlp/landmatrix-graphql-python/blob/main/REST_Methods/Agent_REST.py)
 
-Le fichier rag__DATA.xlsx : contient des exemples de questions en langage naturel ainsi que leurs équivalents en requêtes REST, afin d'enrichir le contexte dans la méthode RAG. 
+Le fichier rag__DATA.xlsx : contient des exemples de questions en langage naturel ainsi que leurs équivalents en requêtes REST, afin d'enrichir le contexte dans la méthode RAG et Agent. 
 
 Context_REST : [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tetis-nlp/landmatrix-graphql-python/blob/main/REST_Methods/Context_REST.py) est un fichier qui contient le contexte à transmettre au prompt pour chaque méthode.
 
