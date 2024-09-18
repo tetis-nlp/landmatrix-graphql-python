@@ -198,7 +198,7 @@ def response(data, llm, parser, context):
             counter += 1
                     
         data.at[index, 'response'] = response
-    data.to_excel("output_REST_RAG.xlsx", index=False)  
+    data.to_excel("OUTPUT_RAG.xlsx", index=False)  
     
 response(data, llm, parser, context)
 
