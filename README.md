@@ -5,26 +5,26 @@ Liens d'intérêt :
 - [Documentation API Land Matrix](https://landmatrix.readthedocs.io/en/latest/api/)
 - [Playground GraphQL Land Matrix](https://landmatrix.org/graphql/)
 
-# 1. Interrogation Land Matrix via Python
+## 1. Interrogation Land Matrix via Python
 
 Interrogation de la base de donnees land matrix via scripts python.
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tetis-nlp/landmatrix-graphql-python/blob/main/notebooks/TP1__GraphQl.ipynb)
 
 
-# 2. Correction et alignement des noms de pays avec ceux de la Land Matrix
+## 2. Correction et alignement des noms de pays avec ceux de la Land Matrix
 
 Ce programme calcule la similarité entre un nom de pays fourni en entrée et les noms de pays d'une liste existante, même en cas de fautes de frappe ou de noms incomplets. Il utilise des embeddings de mots pour représenter chaque nom de pays sous forme numérique, puis compare la similarité cosinus entre l'embedding du pays donné et ceux de la liste pour trouver la correspondance la plus proche. Cette méthode permet d'associer le pays donné à son homologue le plus similaire dans la liste, facilitant ainsi la recherche de correspondances.
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tetis-nlp/landmatrix-graphql-python/blob/main/notebooks/Corresponding_Similarity.ipynb)
 
-# 3. Adapter les large language models (LLMs) using In-Context learning
+## 3. Adapter les large language models (LLMs) using In-Context learning
 
 Pour adapter les large language models (LLMs) tels que llama3 et mixtral, nous utilisons l'apprentissage en contexte (in-context learning) afin de générer des requêtes GraphQL correctes pour interroger la base de données Land Matrix.
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tetis-nlp/landmatrix-graphql-python/blob/main/notebooks/In_Context_Learning.ipynb)
 
-# 4. Adapter les large language models (LLMs) pour la génération de requêtes REST en se basant sur des questions en langage naturel, en utilisant l'apprentissage contextuel (In-Context Learning), RAG et des agents LLM.
+## 4. Adapter les large language models (LLMs) pour la génération de requêtes REST en se basant sur des questions en langage naturel, en utilisant l'apprentissage contextuel (In-Context Learning), RAG et des agents LLM.
 
 ### --- Agents LLM ---
 
@@ -40,3 +40,14 @@ all-mpnet-base-v2. Ce modèle de sentence-transformers mappe les phrases et para
 Nous calculons la similarité entre la question d'entrée et toutes les questions représentées par leurs embeddings stockés dans la base de données vectorielle. Nous retournons les k questions les plus similaires à la question d'entrée ainsi que leurs requêtes REST correspondantes pour les inclure dans le contexte. Plutôt que d'utiliser des requêtes aléatoires dans ce contexte, cette méthode consiste à enrichir le contexte avec des requêtes REST similaires à la question d'entrée. Cela permet au modèle de générer des requêtes qui sont à la fois syntaxiquement correctes et contextuellement pertinentes.
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tetis-nlp/landmatrix-graphql-python/blob/main/notebooks/REST_Request.ipynb)
+
+### --- Explication des codes pour REST ---
+Le dossier REST_Methods contient:
+
+Les méthodes utilisées pour générer des requêtes REST à partir de questions en langage naturel, nous avons travaillé sur In_Context_learning: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tetis-nlp/landmatrix-graphql-python/blob/main/REST_Methods/In_Context_Learning_REST.py), RAG: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tetis-nlp/landmatrix-graphql-python/blob/main/REST_Methods/RAG_REST.py) et Agent: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tetis-nlp/landmatrix-graphql-python/blob/main/REST_Methods/Agent_REST.py)
+
+Le fichier rag__DATA: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tetis-nlp/landmatrix-graphql-python/blob/main/REST_Methods/rag__DATA.xlsx) contient des exemples de questions en langage naturel ainsi que leurs équivalents en requêtes REST, afin d'enrichir le contexte dans la méthode RAG. 
+Context_REST: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tetis-nlp/landmatrix-graphql-python/blob/main/REST_Methods/Context_REST.py) est un fichier qui contient le contexte à transmettre au prompt pour chaque méthode.
+Queries_Rest:  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tetis-nlp/landmatrix-graphql-python/blob/main/REST_Methods/Queries_Rest.xlsx) représente l'ensemble des questions en langage naturel utilisées pour les tests.
+
+Pour faire fonctionner, par exemple, la méthode RAG, il faut d'abord exécuter le fichier Context_REST pour obtenir le contexte, puis exécuter le fichier RAG {Dans les scripts des méthodes, il est nécessaire de choisir le LLM à utiliser. Nous avons mentionné trois options au début du script, mais il faut sélectionner celle souhaitée avant d'exécuter le code}. L'exécution de ce dernier produit un fichier Excel contenant les questions en langage naturel en entrée ainsi que les requêtes correspondantes générées par le modèle. Pour évaluer ces requêtes, il est nécessaire de charger ce fichier dans la liste des modèles au début du script d'évaluation REST:  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tetis-nlp/landmatrix-graphql-python/blob/main/landmatrix_evaluation_lib/Evaluation_REST.py) qui renverra ensuite les métriques d'évaluation.
