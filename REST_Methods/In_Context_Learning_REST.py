@@ -43,7 +43,7 @@ df = pd.read_excel(input_file)
 #-------------------------
 
 parser = StrOutputParser()
-context = Context_REST.context
+context = Context_REST.context_for_InContext_learning
 template = """
 As a REST request expert, you'll create a syntactically correct REST query based on an input question.
 
