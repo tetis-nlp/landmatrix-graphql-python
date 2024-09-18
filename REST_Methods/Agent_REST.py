@@ -481,18 +481,6 @@ def extract_first_rest_request(text):
     return urls[0] if urls else None
 
 
-def fetch_data_from_urls(urls, headers):
-    combined_data = []
-    for url in urls:
-        response = requests.get(url, headers=headers)
-        if response.status_code == 200:
-            data = response.json()
-            combined_data.extend(data)  # Assuming the JSON response is a list of deals
-        else:
-            print(f"Failed to fetch data from {url}")
-    return combined_data
-
-
 # Return Response
 def ChatBot_response( llm, parser,question):
 
