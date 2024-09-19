@@ -24,7 +24,7 @@ import time
 # Set the environment variables from shell environment
 #------------------Codestral-----------------------------------
 
-OPENAI_API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjkxNDgxLTU4NDItNDlkNi1iMjhkLTFmZDZjZWYwYjkzMiJ9.hOf578efg-7uV0sQCKVb_WIU9t5DKVoyspoU3vYV_yI"
+OPENAI_API_KEY = "YOUR_API_KEY"
 OPENAI_CHAT_MODEL = "solidrust/Codestral-22B-v0.1-hf-AWQ"
 OPENAI_CHAT_API_URL = "https://isdm-chat.crocc.meso.umontpellier.fr/openai"
 llm = ChatOpenAI(
