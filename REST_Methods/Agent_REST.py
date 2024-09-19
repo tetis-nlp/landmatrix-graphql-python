@@ -148,44 +148,20 @@ def FormFields(entity):
     if entity == "current_intention" or entity == "Agriculture" or entity == "Forestry" or entity == "MINING":
         entity = "intention_of_investment"
     if entity == "intention_of_investment" :
-        for choice in context["data"]["formfields"]["deal"][entity]["choices"]:
+        for choice in data["data"]["formfields"]["deal"][entity]["choices"]:
             name  = "intention_of_investment"
             type  = choice["label"]
             value = choice["value"]
             list.append(f"[attribut: {name}, label: {type}, value:{value}]")
 
-    if entity == "crops" :
-        for choice in context["data"]["formfields"]["deal"][entity]["choices"]:
-            name  = "crops"
-            type  = choice["label"]
-            value = choice["value"]
-            list.append(f"[attribut: {name}, label: {type}, value:{value}]")
-            
-    if entity == "minerals":
-        entity = "mineral_resources"
-        for choice in context["data"]["formfields"]["deal"][entity]["choices"]:
-            name  = "minerals"
-            type  = choice["label"]
-            value = choice["value"]
-            list.append(f"[attribut: {name}, label: {type}, value:{value}]")
-            
-    if entity == "nature":
-        entity = "nature_of_deal"
-        for choice in context["data"]["formfields"]["deal"][entity]["choices"]:
-            name  = "nature"
-            type  = choice["label"]
-            value = choice["value"]
-            list.append(f"[attribut: {name}, label: {type}, value:{value}]")
-
-    if entity == "animals" or entity == "implementation_status":
-        for choice in context["data"]["formfields"]["deal"][entity]["choices"]:
+    if entity == "animals" or entity == "implementation_status" or entity == "minerals" or entity == "nature" or entity == "crops" or entity == "negotiation_status":
+        for choice in data["data"]["formfields"]["deal"][entity]["choices"]:
             name  = entity
             type  = choice["label"]
             value = choice["value"]
             list.append(f"[attribut: {name}, label: {type}, value:{value}]")
             
     return list
-
 
 # Correction of countries and regions using Similarity
 #-----------------------------------------------------
