@@ -1,3 +1,4 @@
 --> Les fichiers Agent_REST.py, In_Context_Learning_REST.py et RAG_REST.py sont des scripts Python qui génèrent des requêtes REST à partir de questions en langage naturel. 
 --> Le fichier rag__DATA.xlsx contient des exemples de questions en langage naturel ainsi que leurs équivalents en requêtes REST, afin d'enrichir le contexte dans la méthode RAG. 
---> Enfin, Context_REST.py est un fichier qui contient le contexte à transmettre au prompt pour chaque méthode.
+--> Context_REST.py est un fichier qui contient le contexte à transmettre au prompt pour chaque méthode.
+--> Queries_Rest.xlsx représente l'ensemble des questions en langage naturel utilisées pour les tests.
