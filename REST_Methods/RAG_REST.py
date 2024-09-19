@@ -192,7 +192,7 @@ def response(data, llm, parser, context):
         question = row['question']
         response = ChatBot_response(llm, parser, context, question)
         counter = 0   
-        max_attempts = 100     
+        max_attempts = 15     
         while response is None and counter < max_attempts:
             response = ChatBot_response(llm, parser, context, question)
             counter += 1
