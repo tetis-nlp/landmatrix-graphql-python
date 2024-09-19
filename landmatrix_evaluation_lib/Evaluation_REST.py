@@ -264,7 +264,7 @@ def metrics_result(model, moyenne_Jaccard_result, moyenne_Jaccard_query, moyenne
         'mean_tp_value': mean_tp_value
     }])
     
-    file_path = 'Metric_rest___1.xlsx'
+    file_path = 'Metrics_REST.xlsx'
     
     # Vérifiez si le fichier existe déjà
     if os.path.exists(file_path):
