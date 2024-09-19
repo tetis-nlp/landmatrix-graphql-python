@@ -474,7 +474,7 @@ def ChatBot_response( llm, parser,question):
 #-------------------------------------------------------
 
 def response(data, llm, parser):
-    data['response'] = ''
+    data['Predict_Query'] = ''
     for index, row in data.iterrows():
         question = row['question']
         response = ChatBot_response(llm, parser, question)
@@ -484,7 +484,7 @@ def response(data, llm, parser):
             response = ChatBot_response(llm, parser, question)
             counter += 1
                     
-        data.at[index, 'response'] = response
+        data.at[index, 'Predict_Query'] = response
     data.to_excel("OUTPUT_AGENT.xlsx", index=False)  
     
 response(db, llm, parser)
