@@ -183,6 +183,6 @@ def response(data, llm, parser, context):
             counter += 1
                     
         data.at[index, 'response'] = response
-    data.to_excel("OUTPUT_RAG_GraphQL1.xlsx", index=False)  
+    data.to_excel("OUTPUT_RAG_GraphQL.xlsx", index=False)  
     
 response(db, llm, parser, context)
