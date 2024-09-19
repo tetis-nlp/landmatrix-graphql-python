@@ -10,15 +10,15 @@ import re
 
 #----------------------pour Codestral----------------------------------
 
-OPENAI_API_KEY = "YOUR_API_KEY"
-OPENAI_CHAT_MODEL = "solidrust/Codestral-22B-v0.1-hf-AWQ"
-OPENAI_CHAT_API_URL = "https://isdm-chat.crocc.meso.umontpellier.fr/openai"
+# OPENAI_API_KEY = "YOUR_API_KEY"
+# OPENAI_CHAT_MODEL = "solidrust/Codestral-22B-v0.1-hf-AWQ"
+# OPENAI_CHAT_API_URL = "https://isdm-chat.crocc.meso.umontpellier.fr/openai"
 
-model = ChatOpenAI(
-    model=OPENAI_CHAT_MODEL,
-    openai_api_key=OPENAI_API_KEY,
-    openai_api_base=OPENAI_CHAT_API_URL,
-)
+# model = ChatOpenAI(
+#     model=OPENAI_CHAT_MODEL,
+#     openai_api_key=OPENAI_API_KEY,
+#     openai_api_base=OPENAI_CHAT_API_URL,
+# )
 
 #-----------------------pour mixtral---------------------------------
 
@@ -31,9 +31,9 @@ model = ChatOpenAI(
 
 #--------------------------llama3:8b--ollama--------------------
 
-# from langchain_community.llms import Ollama
-# MODEL = "llama3:8b"
-# llm = Ollama(model=MODEL)
+from langchain_community.llms import Ollama
+MODEL = "llama3:8b"
+llm = Ollama(model=MODEL)
 
 #--------------------------------------------------------
 input_file = 'Queries.xlsx'
