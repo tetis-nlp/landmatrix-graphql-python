@@ -89,5 +89,7 @@ ollama pull llama3:8b
 ```bash
 cd REST_Methods_ollama/
 python Agent_REST.py
+python RAG_REST.py
+python In_Context_Learning_REST.py
 ```
 

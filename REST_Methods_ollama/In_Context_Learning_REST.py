@@ -5,6 +5,7 @@ import Context_REST
 from langchain_openai import ChatOpenAI
 from langchain_community.chat_models import ChatOllama
 import re
+from tqdm import tqdm
 
 #--------------------------llama3:8b--ollama--------------------
 
@@ -13,7 +14,7 @@ MODEL = "llama3:8b"
 llm = Ollama(model=MODEL)
 
 #--------------------------------------------------------
-input_file = 'Queries.xlsx'
+input_file = 'Queries_Rest.xlsx'
 df = pd.read_excel(input_file)
 
 ### Construct the prompt
@@ -50,8 +51,7 @@ def modele(question,prompt,model,parser, context):
 
 def add_responses_to_excel(df, prompt, model, parser, context):
     df['Predict_Query'] = ''
-
-    for index, row in df.iterrows():
+    for index, row in tqdm(df.iterrows(), total=len(df)):
         question = row['question']
         response = modele(question, prompt, model, parser, context)
         while response is None:
@@ -62,5 +62,5 @@ def add_responses_to_excel(df, prompt, model, parser, context):
 ### Load the results
 #--------------------------
 
-data_response = add_responses_to_excel(df, prompt, model, parser, context)
+data_response = add_responses_to_excel(df, prompt, llm, parser, context)
 data_response.to_excel("OUTPUT_InContext.xlsx", index=False)

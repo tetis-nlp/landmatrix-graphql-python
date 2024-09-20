@@ -15,6 +15,7 @@ import Context_REST
 import faiss
 import numpy as np
 import time
+from tqdm import tqdm
 
 #--------------------------llama3:8b--ollama--------------------
 
@@ -157,7 +158,7 @@ def ChatBot_response( llm, parser, context, question):
 
 def response(data, llm, parser, context):
     data['Predict_Query'] = ''
-    for index, row in data.iterrows():
+    for index, row in tqdm(data.iterrows(), total=len(data)):
         question = row['question']
         response = ChatBot_response(llm, parser, context, question)
         counter = 0   
