@@ -37,7 +37,7 @@ data    = json.loads(context)
 regions = Context_GraphQL.regions
 countries = Context_GraphQL.countries
 
-file = "Queries_Rest.xlsx"
+file = "Queries_GraphQL.xlsx"
 db = pd.read_excel(file)
 parser = StrOutputParser()
 
