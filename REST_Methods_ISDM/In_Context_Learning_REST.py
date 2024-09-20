@@ -14,7 +14,7 @@ OPENAI_API_KEY = "YOUR_API_KEY"
 OPENAI_CHAT_MODEL = "solidrust/Codestral-22B-v0.1-hf-AWQ"
 OPENAI_CHAT_API_URL = "https://isdm-chat.crocc.meso.umontpellier.fr/openai"
 
-model = ChatOpenAI(
+llm = ChatOpenAI(
     model=OPENAI_CHAT_MODEL,
     openai_api_key=OPENAI_API_KEY,
     openai_api_base=OPENAI_CHAT_API_URL,
@@ -26,7 +26,7 @@ model = ChatOpenAI(
 # LLM_JWT_BEARER = "YOUR_API_KEY"
 # LLM_API_URL = "https://chat.crocc.meso.umontpellier.fr/ollama"
 
-# model = ChatOllama(model=LLM_MODEL, base_url=LLM_API_URL,
+# llm = ChatOllama(model=LLM_MODEL, base_url=LLM_API_URL,
 # headers={"Authorization": "Bearer " + LLM_JWT_BEARER,"Content-Type":"application/json",})
 
 #--------------------------------------------------------
@@ -90,5 +90,5 @@ def add_responses_to_excel(df, prompt, model, parser, context):
 ### Load the results
 #--------------------------
 
-data_response = add_responses_to_excel(df, prompt, model, parser, context)
+data_response = add_responses_to_excel(df, prompt, llm, parser, context)
 data_response.to_excel("OUTPUT_InContext.xlsx", index=False)
