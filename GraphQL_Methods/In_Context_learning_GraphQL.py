@@ -37,7 +37,7 @@ headers={"Authorization": "Bearer " + LLM_JWT_BEARER,"Content-Type":"application
 
 
 #--------------------------------------------------------
-input_file = 'Queries_Rest.xlsx'
+input_file = 'Queries_GraphQL.xlsx'
 df = pd.read_excel(input_file)
 
 ### Construct the prompt
