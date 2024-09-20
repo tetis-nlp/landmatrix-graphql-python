@@ -54,6 +54,10 @@ llm = ChatOpenAI(
 #-------------------------------------
 context = Context_GraphQL.context_GraphQL_RAG
 
+file = "Queries_GraphQL.xlsx"
+db = pd.read_excel(file)
+parser = StrOutputParser()
+
 # RAG: Retrieve similar questions based on the user's question
 #-------------------------------------------------------------
 
@@ -166,10 +170,6 @@ def ChatBot_response( llm, parser, context, question):
 
 # Test the model
 #--------------------------------------------------------
-
-file = "Queries_GraphQL.xlsx"
-db = pd.read_excel(file)
-parser = StrOutputParser()
 
 def response(data, llm, parser, context):
     data['response'] = ''
