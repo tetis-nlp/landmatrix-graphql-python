@@ -30,7 +30,7 @@ model = ChatOpenAI(
 # headers={"Authorization": "Bearer " + LLM_JWT_BEARER,"Content-Type":"application/json",})
 
 #--------------------------------------------------------
-input_file = 'Queries.xlsx'
+input_file = 'Queries_Rest.xlsx'
 df = pd.read_excel(input_file)
 
 ### Construct the prompt
