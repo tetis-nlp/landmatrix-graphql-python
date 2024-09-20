@@ -65,6 +65,16 @@ def modele(question,prompt,model,parser, context):
 
     return result
 
+def extract_first_rest_request(text):
+    # Pattern to capture URLs with http or https surrounded by single quotes
+    url_pattern = r"'(https?://[^\s']+)'"
+    
+    # Search for URLs in the text
+    urls = re.findall(url_pattern, text)
+    
+    # Return the first URL found or None if no URL is found
+    return urls[0] if urls else None
+
 def add_responses_to_excel(df, prompt, model, parser, context):
     df['Predict_Query'] = ''
 
@@ -73,6 +83,7 @@ def add_responses_to_excel(df, prompt, model, parser, context):
         response = modele(question, prompt, model, parser, context)
         while response is None:
             response = modele(question, prompt, model, parser, context)
+        response = extract_first_rest_request(response)
         df.at[index, 'Predict_Query'] = response
     return df
 
