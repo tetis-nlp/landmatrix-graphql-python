@@ -13,7 +13,7 @@ MODEL = "llama3:8b"
 llm = Ollama(model=MODEL)
 
 #--------------------------------------------------------
-input_file = 'Queries.xlsx'
+input_file = 'Queries_Rest.xlsx'
 df = pd.read_excel(input_file)
 
 ### Construct the prompt
