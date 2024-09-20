@@ -346,7 +346,7 @@ def search_similarities(vector, top_k=1):
 #--------------------------------------------------------------
 
 def create_template_Agent2(top_k_matches, all_values, data_dict):
-    template = """ ou are a API REST expert, given the following USER_QUESTION and CONTEXT, Please construct a correct REQUEST !
+    template = """ You are a API REST expert, given the following USER_QUESTION and CONTEXT, Please construct a correct REQUEST !
     
     USER_QUESTION:
     --
