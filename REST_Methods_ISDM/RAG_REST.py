@@ -37,20 +37,15 @@ import time
 
 #-----------------------mixtral--------------
 
-# from langchain_community.chat_models import ChatOllama
+from langchain_community.chat_models import ChatOllama
 
-# LLM_MODEL = "mixtral:8x7b-instruct-v0.1-q5_0"
-# LLM_JWT_BEARER = "Your_API_KEY"
-# LLM_API_URL = "https://chat.crocc.meso.umontpellier.fr/ollama"
+LLM_MODEL = "mixtral:8x7b-instruct-v0.1-q5_0"
+LLM_JWT_BEARER = "Your_API_KEY"
+LLM_API_URL = "https://chat.crocc.meso.umontpellier.fr/ollama"
 
-# llm = ChatOllama(model=LLM_MODEL, base_url=LLM_API_URL,
-# headers={"Authorization": "Bearer " + LLM_JWT_BEARER,"Content-Type":"application/json",})
+llm = ChatOllama(model=LLM_MODEL, base_url=LLM_API_URL,
+headers={"Authorization": "Bearer " + LLM_JWT_BEARER,"Content-Type":"application/json",})
 
-#--------------------------llama3:8b--ollama--------------------
-
-from langchain_community.llms import Ollama
-MODEL = "llama3:8b"
-llm = Ollama(model=MODEL)
 
 
 # Define variables used for processing
