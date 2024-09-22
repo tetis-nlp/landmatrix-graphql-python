@@ -78,18 +78,22 @@ pip install openpyxl
 python -m spacy download en_core_web_sm
 ```
 
-- Installation de ollama
+- Installation et lancement de ollama
 ```bash
 curl -fsSL https://ollama.com/install.sh | sh
 ollama serve
 ollama pull llama3:8b
 ```
 
+- Configurer les clés API
+```bash
+cp credentials.ini.default credentials.ini
+vim credentials.ini
+```
+add your own ISDM API keys
+
 - Lancement de la méthode
 ```bash
-cd REST_Methods_ollama/
-python Agent_REST.py
-python RAG_REST.py
-python In_Context_Learning_REST.py
+python src/experiments.py 
 ```
 
