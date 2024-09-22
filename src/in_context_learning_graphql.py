@@ -46,7 +46,7 @@ else:
     llm = Ollama(model=MODEL)
 
 #--------------------------------------------------------
-input_file = 'Queries_GraphQL.xlsx'
+input_file = 'data/Queries_GraphQL.xlsx'
 df = pd.read_excel(input_file)
 
 ### Construct the prompt
