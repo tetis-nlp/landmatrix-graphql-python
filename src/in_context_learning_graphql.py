@@ -87,7 +87,7 @@ def add_responses_to_excel(df, prompt, model, parser, context):
 
     for index, row in df.iterrows():
         question = row['question']
-        response = modele(question, prompt, model, parser, context)
+        response = modele(question, prompt, llm, parser, context)
         response = re.sub(r'\\', '', response)
         while response is None:
             response = modele(question, prompt, model, parser, context)
