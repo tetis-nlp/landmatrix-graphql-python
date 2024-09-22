@@ -25,6 +25,9 @@ from sentence_transformers import SentenceTransformer
 import torch
 from sklearn.metrics.pairwise import cosine_similarity
 import spacy
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 import Context_GraphQL
 import faiss
 import numpy as np

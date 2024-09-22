@@ -11,7 +11,10 @@ from langchain.prompts import PromptTemplate
 import pandas as pd
 import re
 from langchain_core.output_parsers import StrOutputParser
-from . import Context_GraphQL
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+import Context_GraphQL
 from langchain_openai import ChatOpenAI
 
 from langchain_core.prompts.chat import (
