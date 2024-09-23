@@ -49,7 +49,7 @@ else:
     model_short_name = "llama3"
 
 #--------------------------------------------------------
-input_file = 'Queries.xlsx'
+input_file = 'data/Queries.xlsx'
 df = pd.read_excel(input_file)
 
 ### Construct the prompt
