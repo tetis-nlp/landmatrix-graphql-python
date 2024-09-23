@@ -39,6 +39,7 @@ if args.model == "solidrust/Codestral-22B-v0.1-hf-AWQ":
         openai_api_key=OPENAI_API_KEY,
         openai_api_base=OPENAI_CHAT_API_URL,
     )
+    model_short_name = "codestral"
 elif args.model == "mixtral:8x7b-instruct-v0.1-q5_0":
     from langchain_community.chat_models import ChatOllama
 
@@ -47,10 +48,12 @@ elif args.model == "mixtral:8x7b-instruct-v0.1-q5_0":
     LLM_API_URL = "https://chat.crocc.meso.umontpellier.fr/ollama"
     llm = ChatOllama(model=LLM_MODEL, base_url=LLM_API_URL,
     headers={"Authorization": "Bearer " + LLM_JWT_BEARER,"Content-Type":"application/json",})
+    model_short_name = "mixtral"
 else:
     from langchain_community.llms import Ollama
     MODEL = "llama3:8b"
     llm = Ollama(model=MODEL)
+    model_short_name = "llama3"
 
 
 # Define variables used for processing
@@ -186,6 +189,6 @@ def response(data, llm, parser, context):
             counter += 1
                     
         data.at[index, 'response'] = response
-    data.to_excel("output/OUTPUT_RAG_GraphQL.xlsx", index=False)  
+    data.to_excel(f"output/OUTPUT_RAG_GraphQL_{model_short_name}.xlsx", index=False)  
     
 response(db, llm, parser, context)

@@ -32,6 +32,7 @@ if args.model == "solidrust/Codestral-22B-v0.1-hf-AWQ":
         openai_api_key=OPENAI_API_KEY,
         openai_api_base=OPENAI_CHAT_API_URL,
     )
+    model_short_name = "codestral"
 elif args.model == "mixtral:8x7b-instruct-v0.1-q5_0":
     from langchain_community.chat_models import ChatOllama
 
@@ -40,10 +41,12 @@ elif args.model == "mixtral:8x7b-instruct-v0.1-q5_0":
     LLM_API_URL = "https://chat.crocc.meso.umontpellier.fr/ollama"
     llm = ChatOllama(model=LLM_MODEL, base_url=LLM_API_URL,
     headers={"Authorization": "Bearer " + LLM_JWT_BEARER,"Content-Type":"application/json",})
+    model_short_name = "mixtral"
 else:
     from langchain_community.llms import Ollama
     MODEL = "llama3:8b"
     llm = Ollama(model=MODEL)
+    model_short_name = "llama3"
 
 #--------------------------------------------------------
 input_file = 'data/Queries_GraphQL.xlsx'
@@ -99,4 +102,4 @@ def add_responses_to_excel(df, prompt, model, parser, context):
 #--------------------------
 
 data_response = add_responses_to_excel(df, prompt, llm, parser, context)
-data_response.to_excel("output/output_GraphQL_InContext.xlsx", index=False)
+data_response.to_excel(f"output/output_GraphQL_InContext_{model_short_name}.xlsx", index=False)
