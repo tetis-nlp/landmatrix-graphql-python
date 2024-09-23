@@ -66,7 +66,7 @@ parser = StrOutputParser()
 # RAG: Retrieve similar questions based on the user's question
 #-------------------------------------------------------------
 
-input_file = "rag__DATA.xlsx"
+input_file = "data/rag__DATA.xlsx"
 df = pd.read_excel(input_file)
 
 # Initialize the transformer model
