@@ -60,7 +60,7 @@ else:
 #-------------------------------------
 context = Context_GraphQL.context_GraphQL_RAG
 
-file = "data/Queries_GraphQL.xlsx"
+file = "data/Queries.xlsx"
 db = pd.read_excel(file)
 parser = StrOutputParser()
 
