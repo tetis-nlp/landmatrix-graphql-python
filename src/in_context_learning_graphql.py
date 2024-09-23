@@ -49,7 +49,7 @@ else:
     model_short_name = "llama3"
 
 #--------------------------------------------------------
-input_file = 'data/Queries_GraphQL.xlsx'
+input_file = 'data/Queries.xlsx'
 df = pd.read_excel(input_file)
 
 ### Construct the prompt
