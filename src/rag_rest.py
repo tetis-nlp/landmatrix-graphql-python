@@ -59,7 +59,7 @@ else:
 # Define variables used for processing
 #-------------------------------------
 context = Context_REST.context_REST_RAG
-file = "Queries_Rest.xlsx"
+file = "Queries.xlsx"
 data = pd.read_excel(file)
 parser = StrOutputParser()
 
