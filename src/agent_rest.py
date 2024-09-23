@@ -68,7 +68,7 @@ data    = json.loads(context)
 regions = Context_REST.regions
 countries = Context_REST.countries
 
-file = "Queries.xlsx"
+file = "data/Queries.xlsx"
 db = pd.read_excel(file)
 parser = StrOutputParser()
 
