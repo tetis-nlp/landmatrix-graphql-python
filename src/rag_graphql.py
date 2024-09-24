@@ -63,7 +63,7 @@ else:
     llm = Ollama(model=MODEL)
     model_short_name = "llama3"
 
-logging.info(f'{str(__file__).split("/")[-1]} | {args.model}: started')
+logging.info(f'{str(__file__).split("/")[-1]} | {args.model} | {model_short_name}: started')
 # Define variables used for processing
 #-------------------------------------
 context = Context_GraphQL.context_GraphQL_RAG
@@ -192,7 +192,7 @@ def response(data, llm, parser, context):
         try:
             response = ChatBot_response(llm, parser, context, question)
         except Exception as e:
-            logging.error(f'{str(__file__).split("/")[-1]} | {args.model}: Inference error: {e}')
+            logging.error(f'{str(__file__).split("/")[-1]} | {args.model} | {model_short_name}: Inference error: {e}')
         counter = 0   
         max_attempts = 25     
         while response is None and counter < max_attempts:
@@ -203,7 +203,7 @@ def response(data, llm, parser, context):
     data.to_excel(f"output/OUTPUT_RAG_GraphQL_{model_short_name}.xlsx", index=False)
     try:
         data.to_excel(f"output/output_rag_graphql_{model_short_name}.xlsx", index=False)  
-        logging.info(f'{str(__file__).split("/")[-1]} | {args.model} Finished with {len(data)} queries processed')
+        logging.info(f'{str(__file__).split("/")[-1]} | {args.model} | {model_short_name} Finished with {len(data)} queries processed')
     except Exception as e:
         logging.error(f'{str(__file__).split("/")[-1]}  | {args.model} Saving file: {e}')
     

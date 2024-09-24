@@ -22,6 +22,6 @@ for expe in list_of_expe:
         print(f"\t|--> {model}")
         try:
             # Start the script with the given model in a new process
-            process = subprocess.Popen(['python', f'src/{expe}.py', '--api_key', ISDM_API_KEY, '--api_jwt',  ISDM_JWT, '--model', f'"{model}"'])
+            process = subprocess.Popen(['python', f'src/{expe}.py', '--api_key', ISDM_API_KEY, '--api_jwt',  ISDM_JWT, '--model', f'{model}'])
         except Exception as e:
             print(f"Failed to start script with model {model}: {e}")

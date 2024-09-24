@@ -56,10 +56,10 @@ else:
     llm = Ollama(model=MODEL)
     model_short_name = "llama3"
 
-logging.info(f'{str(__file__).split("/")[-1]} | {args.model}: started')
+logging.info(f'{str(__file__).split("/")[-1]} | {args.model} | {model_short_name}: started')
 #--------------------------------------------------------
 input_file = 'data/Queries.xlsx'
-df = pd.read_excel(input_file)[0:1]
+df = pd.read_excel(input_file)
 
 ### Construct the prompt
 #-------------------------
@@ -93,7 +93,8 @@ def modele(question,prompt,model,parser, context):
     try:
         result = chain.invoke({"context": context, "question": question})
     except Exception as e:
-        logging.error(f'{str(__file__).split("/")[-1]} | {args.model}: Inference error: {e}')
+        logging.error(f'{str(__file__).split("/")[-1]} | {args.model} | {model_short_name}: Inference error: {e}')
+        result = "none"
 
     return result
 
@@ -116,6 +117,6 @@ def add_responses_to_excel(df, prompt, model, parser, context):
 data_response = add_responses_to_excel(df, prompt, llm, parser, context)
 try:
     data_response.to_excel(f"output/output_incontext_graphql_{model_short_name}.xlsx", index=False)
-    logging.info(f'{str(__file__).split("/")[-1]} | {args.model} Finished with {len(data_response)} queries processed')
+    logging.info(f'{str(__file__).split("/")[-1]} | {args.model} | {model_short_name} Finished with {len(data_response)} queries processed')
 except Exception as e:
     logging.error(f'{str(__file__).split("/")[-1]}  | {args.model} Saving file: {e}')
