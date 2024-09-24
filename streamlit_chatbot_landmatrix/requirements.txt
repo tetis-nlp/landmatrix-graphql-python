@@ -1,0 +1,5 @@
+streamlit
+pandas==2.2.2
+plotly
+langchain-core==0.3.2
+langchain-community==0.3.0
