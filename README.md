@@ -48,9 +48,9 @@ add your own ISDM API keys
 
 ## 2. Reproduce our benchmark
 
-    ```bash
-    python src/experiments.py 
-    ```
+```bash
+python src/experiments.py 
+```
 
 - *Monitore your pipeline* : `tail -f logs/pipeline.log`
 - *Stop the pipeline: Kill all the subprocess*: `pkill -f src/`
