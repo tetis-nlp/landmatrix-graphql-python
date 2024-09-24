@@ -8,7 +8,7 @@ import re
 models = ['output_GraphQL_InContext_codestral.xlsx']
 
 
-###################### Récupérer les réponses des requêtes GraphQL ###################
+###################### Récupérer les réponses des requêtes GraphQL ##################
 
 def graphQl(query):
     # Envoyer la requête à l'API GraphQL
