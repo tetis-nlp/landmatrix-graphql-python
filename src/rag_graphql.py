@@ -31,7 +31,7 @@ import numpy as np
 import time
 
 if args.model == "solidrust/Codestral-22B-v0.1-hf-AWQ": 
-    OPENAI_API_KEY = args.api_key
+    OPENAI_API_KEY = args.api_jwt
     OPENAI_CHAT_MODEL = "solidrust/Codestral-22B-v0.1-hf-AWQ"
     OPENAI_CHAT_API_URL = "https://isdm-chat.crocc.meso.umontpellier.fr/openai"
     llm = ChatOpenAI(
@@ -44,7 +44,7 @@ elif args.model == "mixtral:8x7b-instruct-v0.1-q5_0":
     from langchain_community.chat_models import ChatOllama
 
     LLM_MODEL = "mixtral:8x7b-instruct-v0.1-q5_0"
-    LLM_JWT_BEARER = args.api_jwt
+    LLM_JWT_BEARER = args.api_key
     LLM_API_URL = "https://chat.crocc.meso.umontpellier.fr/ollama"
     llm = ChatOllama(model=LLM_MODEL, base_url=LLM_API_URL,
     headers={"Authorization": "Bearer " + LLM_JWT_BEARER,"Content-Type":"application/json",})

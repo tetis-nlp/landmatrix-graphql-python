@@ -1,1 +1,5 @@
 credentials.ini
+.vscode
+output/O*
+output/o*
+src/__pycache__/
