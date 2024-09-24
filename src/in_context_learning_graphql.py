@@ -6,6 +6,14 @@ parser.add_argument('--api_jwt', type=str, required=True, help='Your ISDM JWT')
 parser.add_argument('--model', type=str, default="solidrust/Codestral-22B-v0.1-hf-AWQ")
 args = parser.parse_args()
 
+import logging
+logging.basicConfig(
+    filename='logs/pipeline.log',  # Name of the log file
+    filemode='a',        # Append mode; use 'w' for overwrite
+    format='%(asctime)s - %(levelname)s - %(message)s',  # Format of log messages
+    level=logging.INFO   # Set the logging level
+)
+
 from langchain_community.llms import Ollama
 from langchain.prompts import PromptTemplate
 import pandas as pd
@@ -48,9 +56,10 @@ else:
     llm = Ollama(model=MODEL)
     model_short_name = "llama3"
 
+logging.info(f'{str(__file__).split("/")[-1]} | {args.model}: started')
 #--------------------------------------------------------
 input_file = 'data/Queries.xlsx'
-df = pd.read_excel(input_file)
+df = pd.read_excel(input_file)[0:1]
 
 ### Construct the prompt
 #-------------------------
@@ -81,7 +90,10 @@ prompt = PromptTemplate.from_template(template)
 def modele(question,prompt,model,parser, context):
 
     chain = prompt | model | parser
-    result = chain.invoke({"context": context, "question": question})
+    try:
+        result = chain.invoke({"context": context, "question": question})
+    except Exception as e:
+        logging.error(f'{str(__file__).split("/")[-1]} | {args.model}: Inference error: {e}')
 
     return result
 
@@ -102,4 +114,8 @@ def add_responses_to_excel(df, prompt, model, parser, context):
 #--------------------------
 
 data_response = add_responses_to_excel(df, prompt, llm, parser, context)
-data_response.to_excel(f"output/output_GraphQL_InContext_{model_short_name}.xlsx", index=False)
+try:
+    data_response.to_excel(f"output/output_incontext_graphql_{model_short_name}.xlsx", index=False)
+    logging.info(f'{str(__file__).split("/")[-1]} | {args.model} Finished with {len(data_response)} queries processed')
+except Exception as e:
+    logging.error(f'{str(__file__).split("/")[-1]}  | {args.model} Saving file: {e}')

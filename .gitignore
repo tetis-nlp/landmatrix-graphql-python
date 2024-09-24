@@ -3,3 +3,4 @@ credentials.ini
 output/O*
 output/o*
 src/__pycache__/
+logs/*.log
