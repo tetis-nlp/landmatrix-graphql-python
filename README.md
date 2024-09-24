@@ -38,12 +38,11 @@ git clone https://github.com/tetis-nlp/landmatrix-graphql-python.git
     ollama pull llama3:8b
     ```
 
-- Configure API keys (only compatible with [chat ISDM](https://isdm-chat.crocc.meso.umontpellier.fr/))
+- Configure API keys (only compatible with [chat ISDM](https://isdm-chat.crocc.meso.umontpellier.fr/)): **add your own ISDM API keys** (without `"`)
     ```bash
     cp credentials.ini.default credentials.ini
     vim credentials.ini
     ```
-add your own ISDM API keys
 
 
 ## 2. Reproduce our benchmark
