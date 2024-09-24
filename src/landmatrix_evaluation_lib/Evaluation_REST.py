@@ -44,7 +44,7 @@ def add_responses_to_excel(df):
     df['Predict_Response'] = ''
 
     for index, row in df.iterrows():
-        real = str(row['Real_Query'])
+        real = str(row['Real_Query_REST'])
         predict = str(row['Predict_Query'])  
         real_response = REST(real)
         predict_response = REST(predict)
@@ -99,7 +99,7 @@ def jaccard_similarity_for_queries(df):
     
     for index, row in data.iterrows():
         predict = row["Predict_Query"]
-        real = row["Real_Query"]
+        real = row["Real_Query_REST"]
         
         # Check if query or response is NaN, and handle accordingly
         if pd.isna(predict) or pd.isna(real):
@@ -218,7 +218,7 @@ def fct_comparer_Filtre(df_test):
     for index, row in df_test.iterrows():
         # Extract the query and response from the current row
         predict = row["Predict_Query"]
-        real = row["Real_Query"]
+        real = row["Real_Query_REST"]
         
         # Check if query or response is NaN, and handle accordingly
         if pd.isna(predict) or pd.isna(real):
