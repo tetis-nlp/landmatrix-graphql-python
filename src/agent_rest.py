@@ -495,6 +495,7 @@ def response(data, llm, parser):
         question = row['question']
         try:
             response = ChatBot_response(llm, parser, question)
+            logging.info(f'{str(__file__).split("/")[-1]} | {args.model} | {model_short_name}: progress: {index}/{len(data)}')
         except Exception as e:
             logging.error(f'{str(__file__).split("/")[-1]} | {args.model} | {model_short_name}: Inference error: {e}')
         counter = 0   
