@@ -14,43 +14,46 @@ git clone https://github.com/tetis-nlp/landmatrix-graphql-python.git
 ```
 - Installation of the Python environment
 
-```bash
-conda create -n landmatrix python=3.9 pandas scikit-learn spacy
-conda activate landmatrix
-conda install -c conda-forge sentence-transformers
-pip install transformers faiss-cpu
-pip install ollama
-pip install langchain-openai
-pip install langchain-community
-pip install openpyxl
-```
+    ```bash
+    conda create -n landmatrix python=3.9 pandas scikit-learn spacy
+    conda activate landmatrix
+    conda install -c conda-forge sentence-transformers
+    pip install transformers faiss-cpu
+    pip install ollama
+    pip install langchain-openai
+    pip install langchain-community
+    pip install openpyxl
+    ```
 
 - Downloading the Spacy model
 
-```bash
-python -m spacy download en_core_web_sm
-```
+    ```bash
+    python -m spacy download en_core_web_sm
+    ```
 
 - Installation and launch of Ollama
-```bash
-curl -fsSL https://ollama.com/install.sh | sh
-ollama serve
-ollama pull llama3:8b
-```
+    ```bash
+    curl -fsSL https://ollama.com/install.sh | sh
+    ollama serve
+    ollama pull llama3:8b
+    ```
 
 - Configure API keys (only compatible with [chat ISDM](https://isdm-chat.crocc.meso.umontpellier.fr/))
-```bash
-cp credentials.ini.default credentials.ini
-vim credentials.ini
-```
+    ```bash
+    cp credentials.ini.default credentials.ini
+    vim credentials.ini
+    ```
 add your own ISDM API keys
 
 
 ## 2. Reproduce our benchmark
 
-```bash
-python src/experiments.py 
-```
+    ```bash
+    python src/experiments.py 
+    ```
+
+- *Monitore your pipeline* : `tail -f logs/pipeline.log`
+- *Stop the pipeline: Kill all the subprocess*: `pkill -f src/`
 
 
 
