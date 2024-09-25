@@ -306,7 +306,9 @@ def Recevoir_Entities(data_dict, question):
 # input_file = "./rag__DATA.xlsx"
 # df = pd.read_excel(input_file)
 
-input_file = "rag__DATA.csv"
+import os
+current_dir = os.path.dirname(__file__)
+input_file = os.path.join(current_dir, 'rag__DATA.csv')
 df = pd.read_csv(input_file)
 
 # Initialize the transformer model

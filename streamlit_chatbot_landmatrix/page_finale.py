@@ -6,7 +6,10 @@ import streamlit as st
 import plotly.express as px  
 import Global_Code_LMI
 from langchain_community.llms import Ollama
+import os
 
+current_dir = os.getcwd()
+st.write(f"Current working directory: {current_dir}")
 
 # Define variables used for processing
 #-----------------------------------
