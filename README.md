@@ -15,7 +15,7 @@ git clone https://github.com/tetis-nlp/landmatrix-graphql-python.git
 - Installation of the Python environment
 
     ```bash
-    conda create -n landmatrix python=3.9 pandas scikit-learn spacy
+    conda create -n landmatrix python=3.9 pandas scikit-learn spacy streamlit
     conda activate landmatrix
     conda install -c conda-forge sentence-transformers
     pip install transformers faiss-cpu
