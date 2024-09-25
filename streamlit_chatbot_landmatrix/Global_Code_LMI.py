@@ -303,8 +303,11 @@ def Recevoir_Entities(data_dict, question):
 # RAG: Retrieve similar questions based on the user's question
 #-------------------------------------------------------------
 
-input_file = "./rag__DATA.xlsx"
-df = pd.read_excel(input_file)
+# input_file = "./rag__DATA.xlsx"
+# df = pd.read_excel(input_file)
+
+input_file = "./rag__DATA.csv"
+df = pd.read_csv(input_file)
 
 # Initialize the transformer model
 model_mpnet = SentenceTransformer('sentence-transformers/all-mpnet-base-v2')
