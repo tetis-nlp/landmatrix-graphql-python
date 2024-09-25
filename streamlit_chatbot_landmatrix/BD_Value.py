@@ -1,4 +1,5 @@
-context = """
+
+context= """
 {
   "data": {
     "formfields": {
@@ -28,11 +29,6 @@ context = """
         "production_size": {
           "label": "Size in operation (production, in ha)",
           "class": "JSONDateAreaField",
-          "required": false
-        },
-        "land_area_comment": {
-          "label": "Comment on land area",
-          "class": "TextField",
           "required": false
         },
         "intention_of_investment": {
@@ -152,23 +148,13 @@ context = """
             }
           ]
         },
-        "intention_of_investment_comment": {
-          "label": "Comment on intention of investment",
-          "class": "TextField",
-          "required": false
-        },
         "carbon_offset_project": {
           "label": "Carbon offset project",
           "class": "NullBooleanField",
           "required": false
         },
-        "carbon_offset_project_comment": {
-          "label": "Carbon offset project comment",
-          "class": "TextField",
-          "required": false
-        },
-        "nature_of_deal": {
-          "label": "Nature of the deal",
+        "nature": {
+          "label": "Nature",
           "class": "SimpleArrayField",
           "required": false,
           "choices": [
@@ -202,11 +188,7 @@ context = """
             }
           ]
         },
-        "nature_of_deal_comment": {
-          "label": "Comment on nature of the deal",
-          "class": "TextField",
-          "required": false
-        },
+       
         "negotiation_status": {
           "label": "Negotiation status",
           "class": "JSONDateChoiceField",
@@ -250,11 +232,6 @@ context = """
             }
           ]
         },
-        "negotiation_status_comment": {
-          "label": "Comment on negotiation status",
-          "class": "TextField",
-          "required": false
-        },
         "implementation_status": {
           "label": "Implementation status",
           "class": "JSONDateChoiceField",
@@ -278,22 +255,6 @@ context = """
             }
           ]
         },
-        "implementation_status_comment": {
-          "label": "Comment on implementation status",
-          "class": "TextField",
-          "required": false
-        },
-        "purchase_price": {
-          "label": "Purchase price",
-          "class": "DecimalField",
-          "required": false
-        },
-        "purchase_price_currency": {
-          "label": "Purchase price currency",
-          "class": "CurrencyForeignKey",
-          "required": false,
-          "related_model": "Currency"
-        },
         "purchase_price_type": {
           "label": "Purchase price area type",
           "class": "TypedChoiceField",
@@ -313,174 +274,15 @@ context = """
             }
           ]
         },
-        "purchase_price_area": {
-          "label": "Purchase price area",
-          "class": "DecimalField",
-          "required": false
-        },
-        "purchase_price_comment": {
-          "label": "Comment on purchase price",
-          "class": "TextField",
-          "required": false
-        },
-        "annual_leasing_fee": {
-          "label": "Annual leasing fee",
-          "class": "DecimalField",
-          "required": false
-        },
-        "annual_leasing_fee_currency": {
-          "label": "Annual leasing fee currency",
-          "class": "CurrencyForeignKey",
-          "required": false,
-          "related_model": "Currency"
-        },
-        "annual_leasing_fee_type": {
-          "label": "Annual leasing fee area type",
-          "class": "TypedChoiceField",
-          "required": false,
-          "choices": [
-            {
-              "value": "",
-              "label": "---------"
-            },
-            {
-              "value": "PER_HA",
-              "label": "per ha"
-            },
-            {
-              "value": "PER_AREA",
-              "label": "for specified area"
-            }
-          ]
-        },
-        "annual_leasing_fee_area": {
-          "label": "Annual leasing fee area",
-          "class": "DecimalField",
-          "required": false
-        },
         "contract_farming": {
           "label": "Contract farming",
           "class": "NullBooleanField",
           "required": false
-        },
-        "on_the_lease_state": {
-          "label": "On leased / purchased",
-          "class": "NullBooleanField",
-          "required": false
-        },
-        "on_the_lease": {
-          "label": "On leased area/farmers/households",
-          "class": "JSONLeaseField",
-          "required": false
-        },
-        "off_the_lease_state": {
-          "label": "Not on leased / purchased (out-grower)",
-          "class": "NullBooleanField",
-          "required": false
-        },
-        "off_the_lease": {
-          "label": "Not on leased area/farmers/households (out-grower)",
-          "class": "JSONLeaseField",
-          "required": false
-        },
-       
+        }, 
         "contracts": {
           "label": "Contracts",
           "class": "JSONSchemaFormField",
           "required": false
-        },
-        "total_jobs_created": {
-          "label": "Jobs created (total)",
-          "class": "NullBooleanField",
-          "required": false
-        },
-        "total_jobs_planned": {
-          "label": "Planned number of jobs (total)",
-          "class": "IntegerField",
-          "required": false,
-          "unit": "jobs"
-        },
-        "total_jobs_planned_employees": {
-          "label": "Planned employees (total)",
-          "class": "IntegerField",
-          "required": false,
-          "unit": "employees"
-        },
-        "total_jobs_planned_daily_workers": {
-          "label": "Planned daily/seasonal workers (total)",
-          "class": "IntegerField",
-          "required": false,
-          "unit": "workers"
-        },
-        "total_jobs_current": {
-          "label": "Current total number of jobs/employees/ daily/seasonal workers",
-          "class": "JSONJobsField",
-          "required": false
-        },
-       
-        "foreign_jobs_created": {
-          "label": "Jobs created (foreign)",
-          "class": "NullBooleanField",
-          "required": false
-        },
-        "foreign_jobs_planned": {
-          "label": "Planned number of jobs (foreign)",
-          "class": "IntegerField",
-          "required": false,
-          "unit": "jobs"
-        },
-        "foreign_jobs_planned_employees": {
-          "label": "Planned employees (foreign)",
-          "class": "IntegerField",
-          "required": false,
-          "unit": "employees"
-        },
-        "foreign_jobs_planned_daily_workers": {
-          "label": "Planned daily/seasonal workers (foreign)",
-          "class": "IntegerField",
-          "required": false,
-          "unit": "workers"
-        },
-        "foreign_jobs_current": {
-          "label": "Current foreign number of jobs/employees/ daily/seasonal workers",
-          "class": "JSONJobsField",
-          "required": false
-        },
-        
-        "domestic_jobs_created": {
-          "label": "Jobs created (domestic)",
-          "class": "NullBooleanField",
-          "required": false
-        },
-        "domestic_jobs_planned": {
-          "label": "Planned number of jobs (domestic)",
-          "class": "IntegerField",
-          "required": false,
-          "unit": "jobs"
-        },
-        "domestic_jobs_planned_employees": {
-          "label": "Planned employees (domestic)",
-          "class": "IntegerField",
-          "required": false,
-          "unit": "employees"
-        },
-        "domestic_jobs_planned_daily_workers": {
-          "label": "Planned daily/seasonal workers (domestic)",
-          "class": "IntegerField",
-          "required": false,
-          "unit": "workers"
-        },
-        "domestic_jobs_current": {
-          "label": "Current domestic number of jobs/employees/ daily/seasonal workers",
-          "class": "JSONJobsField",
-          "required": false
-        },
-        
-        "operating_company": {
-          "label": "Operating company",
-          "class": "InvestorForeignKey",
-          "required": false,
-          "related_model": "Investor"
         },
         "involved_actors": {
           "label": "Actors involved in the negotiation / admission process",
@@ -518,31 +320,6 @@ context = """
           "class": "CharField",
           "required": false
         },
-        "investment_chain_comment": {
-          "label": "Comment on investment chain",
-          "class": "TextField",
-          "required": false
-        },
-        "datasources": {
-          "label": "Data sources",
-          "class": "JSONSchemaFormField",
-          "required": false
-        },
-        "name_of_community": {
-          "label": "Name of community",
-          "class": "SimpleArrayField",
-          "required": false
-        },
-        "name_of_indigenous_people": {
-          "label": "Name of indigenous people",
-          "class": "SimpleArrayField",
-          "required": false
-        },
-        "people_affected_comment": {
-          "label": "Comment on communities / indigenous peoples affected",
-          "class": "TextField",
-          "required": false
-        },
         "recognition_status": {
           "label": "Recognition status of community land tenure",
           "class": "SimpleArrayField",
@@ -569,11 +346,6 @@ context = """
               "label": "Community traditional or customary rights not recognized by government"
             }
           ]
-        },
-        "recognition_status_comment": {
-          "label": "Comment on recognition status of community land tenure",
-          "class": "TextField",
-          "required": false
         },
         "community_consultation": {
           "label": "Community consultation",
@@ -602,11 +374,6 @@ context = """
             }
           ]
         },
-        "community_consultation_comment": {
-          "label": "Comment on consultation of local community",
-          "class": "TextField",
-          "required": false
-        },
         "community_reaction": {
           "label": "Community reaction",
           "class": "TypedChoiceField",
@@ -629,56 +396,6 @@ context = """
               "label": "Rejection"
             }
           ]
-        },
-        "community_reaction_comment": {
-          "label": "Comment on community reaction",
-          "class": "TextField",
-          "required": false
-        },
-        "land_conflicts": {
-          "label": "Presence of land conflicts",
-          "class": "NullBooleanField",
-          "required": false
-        },
-        "land_conflicts_comment": {
-          "label": "Comment on presence of land conflicts",
-          "class": "TextField",
-          "required": false
-        },
-        "displacement_of_people": {
-          "label": "Displacement of people",
-          "class": "NullBooleanField",
-          "required": false
-        },
-        "displaced_people": {
-          "label": "Number of people actually displaced",
-          "class": "IntegerField",
-          "required": false
-        },
-        "displaced_households": {
-          "label": "Number of households actually displaced",
-          "class": "IntegerField",
-          "required": false
-        },
-        "displaced_people_from_community_land": {
-          "label": "Number of people displaced out of their community land",
-          "class": "IntegerField",
-          "required": false
-        },
-        "displaced_people_within_community_land": {
-          "label": "Number of people displaced staying on community land",
-          "class": "IntegerField",
-          "required": false
-        },
-        "displaced_households_from_fields": {
-          "label": "Number of households displaced",
-          "class": "IntegerField",
-          "required": false
-        },
-        "displaced_people_on_completion": {
-          "label": "Number of people facing displacement once project is fully implemented",
-          "class": "IntegerField",
-          "required": false
         },
         
         "negative_impacts": {
@@ -719,17 +436,6 @@ context = """
               "label": "Other"
             }
           ]
-        },
-       
-        "promised_compensation": {
-          "label": "Promised compensation (e.g. for damages or resettlements)",
-          "class": "TextField",
-          "required": false
-        },
-        "received_compensation": {
-          "label": "Received compensation (e.g. for damages or resettlements)",
-          "class": "TextField",
-          "required": false
         },
         "promised_benefits": {
           "label": "Promised benefits for local communities",
@@ -817,12 +523,6 @@ context = """
               "label": "Other"
             }
           ]
-        },
-        
-        "presence_of_organizations": {
-          "label": "Presence of organizations and actions taken (e.g. farmer organizations, NGOs, etc.)",
-          "class": "TextField",
-          "required": false
         },
         "former_land_owner": {
           "label": "Former land owner",
@@ -944,7 +644,7 @@ context = """
           ]
         },
         "crops": {
-          "label": "Crops area/yield/export",
+          "label": "Crops",
           "class": "JSONExportsField",
           "required": false,
           "choices": [
@@ -1299,7 +999,7 @@ context = """
           ]
         },
         "animals": {
-          "label": "Livestock area/yield/export",
+          "label": "animals",
           "class": "JSONExportsField",
           "required": false,
           "choices": [
@@ -1349,8 +1049,8 @@ context = """
             }
           ]
         },
-        "mineral_resources": {
-          "label": "Mineral resources area/yield/export",
+        "minerals": {
+          "label": "Minerals",
           "class": "JSONExportsField",
           "required": false,
           "choices": [
@@ -1556,11 +1256,7 @@ context = """
             }
           ]
         },
-        "mineral_resources_comment": {
-          "label": "Comment on mineral resources",
-          "class": "TextField",
-          "required": false
-        },
+       
         "contract_farming_crops": {
           "label": "Contract farming crops",
           "class": "JSONDateAreaChoicesField",
@@ -1917,11 +1613,6 @@ context = """
             }
           ]
         },
-        "contract_farming_crops_comment": {
-          "label": "Comment on contract farming crops",
-          "class": "TextField",
-          "required": false
-        },
         "contract_farming_animals": {
           "label": "Contract farming livestock",
           "class": "JSONDateAreaChoicesField",
@@ -2046,110 +1737,6 @@ context = """
             }
           ]
         },
-        
-        "has_domestic_use": {
-          "label": "Has domestic use",
-          "class": "NullBooleanField",
-          "required": false
-        },
-        "domestic_use": {
-          "label": "Domestic use",
-          "class": "FloatField",
-          "required": false,
-          "unit": "%",
-          "min_value": 0,
-          "max_value": 100
-        },
-        "has_export": {
-          "label": "Has export",
-          "class": "NullBooleanField",
-          "required": false
-        },
-        "export": {
-          "label": "Export",
-          "class": "FloatField",
-          "required": false,
-          "unit": "%",
-          "min_value": 0,
-          "max_value": 100
-        },
-        "export_country1": {
-          "label": "Country 1",
-          "class": "CountryForeignKey",
-          "required": false,
-          "related_model": "Country"
-        },
-        "export_country1_ratio": {
-          "label": "Country 1 ratio",
-          "class": "FloatField",
-          "required": false,
-          "unit": "%",
-          "min_value": 0,
-          "max_value": 100
-        },
-        "export_country2": {
-          "label": "Country 2",
-          "class": "CountryForeignKey",
-          "required": false,
-          "related_model": "Country"
-        },
-        "export_country2_ratio": {
-          "label": "Country 2 ratio",
-          "class": "FloatField",
-          "required": false,
-          "unit": "%",
-          "min_value": 0,
-          "max_value": 100
-        },
-        "export_country3": {
-          "label": "Country 3",
-          "class": "CountryForeignKey",
-          "required": false,
-          "related_model": "Country"
-        },
-        "export_country3_ratio": {
-          "label": "Country 3 ratio",
-          "class": "FloatField",
-          "required": false,
-          "unit": "%",
-          "min_value": 0,
-          "max_value": 100
-        },
-        "use_of_produce_comment": {
-          "label": "Comment on use of produce",
-          "class": "TextField",
-          "required": false
-        },
-        "in_country_processing": {
-          "label": "In country processing of produce",
-          "class": "NullBooleanField",
-          "required": false
-        },
-        "in_country_processing_comment": {
-          "label": "Comment on in country processing of produce",
-          "class": "TextField",
-          "required": false
-        },
-        "in_country_processing_facilities": {
-          "label": "Processing facilities / production infrastructure of the project (e.g. oil mill, ethanol distillery, biomass power plant etc.)",
-          "class": "TextField",
-          "required": false
-        },
-        "in_country_end_products": {
-          "label": "In-country end products of the project",
-          "class": "TextField",
-          "required": false
-        },
-        "water_extraction_envisaged": {
-          "label": "Water extraction envisaged",
-          "class": "NullBooleanField",
-          "required": false
-        },
-        "water_extraction_envisaged_comment": {
-          "label": "Comment on water extraction envisaged",
-          "class": "TextField",
-          "required": false
-        },
         "source_of_water_extraction": {
           "label": "Source of water extraction",
           "class": "SimpleArrayField",
@@ -2177,278 +1764,22 @@ context = """
             }
           ]
         },
-        
-        "water_extraction_amount": {
-          "label": "Water extraction amount",
-          "class": "IntegerField",
-          "required": false,
-          "unit": "m3/year"
-        },
-       
-        "use_of_irrigation_infrastructure": {
-          "label": "Use of irrigation infrastructure",
-          "class": "NullBooleanField",
-          "required": false
-        },
-       
-        "water_footprint": {
-          "label": "Water footprint of the investment project",
-          "class": "TextField",
-          "required": false
-        },
-        "gender_related_information": {
-          "label": "Comment on gender-related info",
-          "class": "TextField",
-          "required": false
-        },
-       
         "fully_updated": {
           "label": "Fully updated",
           "class": "BooleanField",
           "required": false
         },
-        "confidential": {
-          "label": "Confidential",
-          "class": "BooleanField",
-          "required": false
-        },
-       
-        "current_contract_size": {
-          "label": "Current contract size",
+        "area_min": {
+          "label": "area_min",
           "class": "DecimalField",
           "required": false,
           "unit": "ha"
         },
-        "current_production_size": {
-          "label": "Current production size",
-          "class": "DecimalField",
-          "required": false
-        },
-        "current_intention_of_investment": {
-          "label": "Current intention of investment",
-          "class": "SimpleArrayField",
-          "required": false,
-          "choices": [
-            {
-              "value": "",
-              "label": "---------"
-            },
-            {
-              "value": "BIOFUELS",
-              "label": "Biomass for biofuels"
-            },
-            {
-              "value": "BIOMASS_ENERGY_GENERATION",
-              "label": "Biomass for energy generation (agriculture)"
-            },
-            {
-              "value": "FODDER",
-              "label": "Fodder"
-            },
-            {
-              "value": "FOOD_CROPS",
-              "label": "Food crops"
-            },
-            {
-              "value": "LIVESTOCK",
-              "label": "Livestock"
-            },
-            {
-              "value": "NON_FOOD_AGRICULTURE",
-              "label": "Non-food agricultural commodities"
-            },
-            {
-              "value": "AGRICULTURE_UNSPECIFIED",
-              "label": "Agriculture unspecified"
-            },
-            {
-              "value": "BIOMASS_ENERGY_PRODUCTION",
-              "label": "Biomass for energy generation (forestry)"
-            },
-            {
-              "value": "CARBON",
-              "label": "For carbon sequestration/REDD"
-            },
-            {
-              "value": "FOREST_LOGGING",
-              "label": "Forest logging / management for wood and fiber"
-            },
-            {
-              "value": "TIMBER_PLANTATION",
-              "label": "Timber plantation for wood and fiber"
-            },
-            {
-              "value": "FORESTRY_UNSPECIFIED",
-              "label": "Forestry unspecified"
-            },
-            {
-              "value": "SOLAR_PARK",
-              "label": "Solar park"
-            },
-            {
-              "value": "WIND_FARM",
-              "label": "Wind farm"
-            },
-            {
-              "value": "RENEWABLE_ENERGY",
-              "label": "Renewable energy unspecified"
-            },
-            {
-              "value": "CONVERSATION",
-              "label": "Conservation"
-            },
-            {
-              "value": "INDUSTRY",
-              "label": "Industry"
-            },
-            {
-              "value": "LAND_SPECULATION",
-              "label": "Land speculation"
-            },
-            {
-              "value": "MINING",
-              "label": "Mining"
-            },
-            {
-              "value": "OIL_GAS_EXTRACTION",
-              "label": "Oil / Gas extraction"
-            },
-            {
-              "value": "TOURISM",
-              "label": "Tourism"
-            },
-            {
-              "value": "OTHER",
-              "label": "Other"
-            }
-          ]
-        },
-        "current_negotiation_status": {
-          "label": "Current negotiation status",
-          "class": "TypedChoiceField",
-          "required": false,
-          "choices": [
-            {
-              "value": "",
-              "label": "---------"
-            },
-            {
-              "value": "EXPRESSION_OF_INTEREST",
-              "label": "Intended (Expression of interest)"
-            },
-            {
-              "value": "UNDER_NEGOTIATION",
-              "label": "Intended (Under negotiation)"
-            },
-            {
-              "value": "MEMORANDUM_OF_UNDERSTANDING",
-              "label": "Intended (Memorandum of understanding)"
-            },
-            {
-              "value": "ORAL_AGREEMENT",
-              "label": "Concluded (Oral Agreement)"
-            },
-            {
-              "value": "CONTRACT_SIGNED",
-              "label": "Concluded (Contract signed)"
-            },
-            {
-              "value": "CHANGE_OF_OWNERSHIP",
-              "label": "Concluded (Change of ownership)"
-            },
-            {
-              "value": "NEGOTIATIONS_FAILED",
-              "label": "Failed (Negotiations failed)"
-            },
-            {
-              "value": "CONTRACT_CANCELED",
-              "label": "Failed (Contract cancelled)"
-            },
-            {
-              "value": "CONTRACT_EXPIRED",
-              "label": "Contract expired"
-            }
-          ]
-        },
-        "current_implementation_status": {
-          "label": "Current implementation status",
-          "class": "TypedChoiceField",
-          "required": false,
-          "choices": [
-            {
-              "value": "",
-              "label": "---------"
-            },
-            {
-              "value": "PROJECT_NOT_STARTED",
-              "label": "Project not started"
-            },
-            {
-              "value": "STARTUP_PHASE",
-              "label": "Startup phase (no production)"
-            },
-            {
-              "value": "IN_OPERATION",
-              "label": "In operation (production)"
-            },
-            {
-              "value": "PROJECT_ABANDONED",
-              "label": "Project abandoned"
-            }
-          ]
-        },
-        "current_crops": {
-          "label": "Current crops",
-          "class": "SimpleArrayField",
-          "required": false
-        },
-        "current_animals": {
-          "label": "Current animals",
-          "class": "SimpleArrayField",
-          "required": false
-        },
-        "current_mineral_resources": {
-          "label": "Current mineral resources",
-          "class": "SimpleArrayField",
-          "required": false
-        },
-        "current_electricity_generation": {
-          "label": "Current electricity generation",
-          "class": "SimpleArrayField",
-          "required": false
-        },
-        "current_carbon_sequestration": {
-          "label": "Current carbon sequestration",
-          "class": "SimpleArrayField",
-          "required": false
-        },
-        "deal_size": {
-          "label": "Deal size",
+        "area_max": {
+          "label": "area_max",
           "class": "DecimalField",
           "required": false,
           "unit": "ha"
-        },
-        "created_at": {
-          "label": "Created",
-          "class": "DateTimeField",
-          "required": false
-        },
-        "created_by": {
-          "label": "Created by",
-          "class": "ModelChoiceField",
-          "required": false,
-          "related_model": "User"
-        },
-        "modified_at": {
-          "label": "Last update",
-          "class": "DateTimeField",
-          "required": false
-        },
-        "modified_by": {
-          "label": "Modified by",
-          "class": "ModelChoiceField",
-          "required": false,
-          "related_model": "User"
         },
         "fully_updated_at": {
           "label": "Last full update",
@@ -2730,5 +2061,3 @@ countries = [
     {"id": 887, "country.name": "Yemen, Rep.", "region_name": "Asia"},
     {"id": 894, "country.name": "Zambia", "region_name": "Africa"},
 ]
-
-
