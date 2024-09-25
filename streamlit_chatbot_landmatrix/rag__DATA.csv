@@ -1,0 +1,407 @@
+question,Real__Query,REST
+investments exist in Agriculture?,"query Data {
+  deals(
+    filters: [
+      {
+        field: ""current_intention_of_investment"",
+        operation: OVERLAP,
+        value: [""BIOFUELS"", ""BIOMASS_ENERGY_GENERATION"", ""FODDER"",
+                                        ""FOOD_CROPS"", ""LIVESTOCK"", ""NON_FOOD_AGRICULTURE"",
+                                  ""AGRICULTURE_UNSPECIFIED""]
+      }
+    ]
+  ) { 
+           id
+    country {id name code_alpha2}
+    current_intention_of_investment
+  }
+}",https://landmatrix.org/api/deals/?intention_of_investment=BIOFUELS&intention_of_investment=BIOMASS_ENERGY_GENERATION&intention_of_investment=FODDER&intention_of_investment=FOOD_CROPS&intention_of_investment=LIVESTOCK&intention_of_investment=NON_FOOD_AGRICULTURE&intention_of_investment=AGRICULTURE_UNSPECIFIED
+investments exist in Forestry?,"query Data {
+  deals(
+    filters: [
+      {
+        field: ""current_intention_of_investment"",
+        operation: OVERLAP,
+        value: [""BIOMASS_ENERGY_PRODUCTION"", ""CARBON"",
+                                        ""FOREST_LOGGING"", ""TIMBER_PLANTATION"",
+                                        ""FORESTRY_UNSPECIFIED""]
+      }
+    ]
+  ) { 
+           id
+    country {id name code_alpha2}
+    current_intention_of_investment
+  }
+}",https://landmatrix.org/api/deals/?intention_of_investment=BIOMASS_ENERGY_PRODUCTION&intention_of_investment=CARBON&intention_of_investment=FOREST_LOGGING&intention_of_investment=TIMBER_PLANTATION&intention_of_investment=FORESTRY_UNSPECIFIED
+investments exist in Mining?,"query Data {
+  deals(
+    filters: [
+      {
+        field: ""current_intention_of_investment"",
+        operation: OVERLAP,
+        value: [""MINING""]
+      }
+    ]
+  ) { 
+           id
+    country {id name code_alpha2}
+    current_intention_of_investment
+  }
+}",https://landmatrix.org/api/deals/?intention_of_investment=MINING
+What types of investment exist in Ethiopia?,"query Data {
+  deals(
+    filters: [
+      {field: ""country.id"", operation: EQ, value: 231 }
+    ]
+  ) { 
+           id
+    country {id name code_alpha2}
+    current_intention_of_investment
+  }
+}",https://landmatrix.org/api/deals/?country_id=231
+What types of investment exist in Hungary?,"query Data {
+  deals(
+    filters: [
+      {field: ""country.id"", operation: EQ, value: 348 }
+    ]
+  ) { 
+           id
+    country {id name code_alpha2}
+    current_intention_of_investment
+  }
+}",https://landmatrix.org/api/deals/?country_id=348
+What types of investment exist in China since 2010?,"query Data {
+  deals(
+    filters: [
+      {field: ""country.id"", operation: EQ, value: 446 }
+      {field: ""initiation_year"", operation: GE, value: 2010, allow_null: true}
+    ]
+  ) { 
+           id
+    country {id name code_alpha2}
+    initiation_year
+    current_intention_of_investment
+  }
+}",https://landmatrix.org/api/deals/?country_id=446&initiation_year_min=2010&initiation_year_null=true
+What types of investment exist in Palau since 2000?,"query Data {
+  deals(
+    filters: [
+      {field: ""country.id"", operation: EQ, value: 585 }
+      {field: ""initiation_year"", operation: GE, value: 2000, allow_null: true}
+    ]
+  ) { 
+           id
+    country {id name code_alpha2}
+    initiation_year
+    current_intention_of_investment
+  }
+}",https://landmatrix.org/api/deals/?country_id=585&initiation_year_min=2000&initiation_year_null=true
+What types of investment exist in Anguilla since 2020?,"query Data {
+  deals(
+    filters: [
+      {field: ""country.id"", operation: EQ, value: 660 }
+      {field: ""initiation_year"", operation: GE, value: 2020, allow_null: true}
+    ]
+  ) { 
+           id
+    country {id name code_alpha2}
+    initiation_year
+    current_intention_of_investment
+  }
+}",https://landmatrix.org/api/deals/?country_id=660&initiation_year_min=2020&initiation_year_null=true
+What types of investment exist in Africa since 2010?,"query Data {
+  deals(
+    filters: [
+      {field: ""country.region.id"", operation: EQ, value: 2 }
+      {field: ""initiation_year"", operation: GE, value: 2010, allow_null: true}
+    ]
+  ) { 
+           id
+    country {
+      id
+      name
+      code_alpha2
+      region {id, name}
+    }
+    initiation_year
+    current_intention_of_investment
+  }
+}",https://landmatrix.org/api/deals/?initiation_year_min=2010&initiation_year_null=true&region_id=2
+What types of investment exist in South-East Asia since 2010?,"query Data {
+  deals(
+    filters: [
+      {field: ""country.region.id"", operation: EQ, value: 142 }
+      {field: ""initiation_year"", operation: GE, value: 2010, allow_null: true}
+    ]
+  ) { 
+           id
+    country {
+      id
+      name
+      code_alpha2
+      region {id, name}
+    }
+    initiation_year
+    current_intention_of_investment
+  }
+}",https://landmatrix.org/api/deals/?initiation_year_min=2010&initiation_year_null=true&region_id=142
+What types of investment exist in Latin America since 2010?,"query Data {
+  deals(
+    filters: [
+      {field: ""country.region.id"", operation: EQ, value: 419 }
+      {field: ""initiation_year"", operation: GE, value: 2010, allow_null: true}
+    ]
+  ) { 
+           id
+    country {
+      id
+      name
+      code_alpha2
+      region {id, name}
+    }
+    initiation_year
+    current_intention_of_investment
+  }
+}",https://landmatrix.org/api/deals/?initiation_year_min=2010&initiation_year_null=true&region_id=419
+How many hectares are in operation?,"query Data {
+  deals(
+    filters: [
+      {field: ""current_implementation_status"", operation: EQ, value: ""IN_OPERATION"" }
+    ]
+  ) { 
+           id
+    current_implementation_status
+  }
+}",https://landmatrix.org/api/deals/?implementation_status=IN_OPERATION
+How many ha are in operation?,"query Data {
+  deals(
+    filters: [
+      {field: ""current_implementation_status"", operation: EQ, value: ""IN_OPERATION"" }
+    ]
+  ) { 
+           id
+    current_implementation_status
+  }
+}",https://landmatrix.org/api/deals/?implementation_status=IN_OPERATION
+How many land deals have been abandoned? ,"query Data {
+  deals(
+    filters: [
+      {field: ""current_implementation_status"", operation: EQ, value: ""PROJECT_ABANDONED"" }
+    ]
+  ) { 
+           id
+    current_implementation_status
+  }
+}",https://landmatrix.org/api/deals/?implementation_status=PROJECT_ABANDONED
+How much land is related to abandoned deals?,"query Data {
+  deals(
+    filters: [
+      {field: ""current_implementation_status"", operation: EQ, value: ""PROJECT_ABANDONED"" }
+    ]
+  ) { 
+           id
+    current_implementation_status
+  }
+}",https://landmatrix.org/api/deals/?implementation_status=PROJECT_ABANDONED
+How many deals are in a start up phase?,"query Data {
+  deals(
+    filters: [
+      {field: ""current_implementation_status"", operation: EQ, value: ""STARTUP_PHASE"" }
+    ]
+  ) { 
+           id
+    current_implementation_status
+  }
+}",https://landmatrix.org/api/deals/?implementation_status=STARTUP_PHASE
+How much land will be taken by forthcoming deals? ,"query Data {
+  deals(
+    filters: [
+      {field: ""current_implementation_status"", operation: EQ, value: ""PROJECT_NOT_STARTED"" }
+    ]
+  ) { 
+           id
+    current_implementation_status
+  }
+}",https://landmatrix.org/api/deals/?implementation_status=PROJECT_NOT_STARTED
+Where is soy production?,"query Data {
+  deals(
+    filters: [
+      {field: ""current_crops"", operation: CONTAINS, value: ""SOY"" }
+    ]
+  ) { 
+           id
+    country {id name code_alpha2}
+    current_crops
+  }
+}",https://landmatrix.org/api/deals/?crops=SOY
+Where is soy production in Brazil?,"query Data {
+  deals(
+    filters: [
+      {field: ""current_crops"", operation: CONTAINS, value: ""SOY"" }
+      {field: ""country.id"", operation: EQ, value: 76}
+    ]
+  ) { 
+           id
+    country {
+      id
+      name
+      code_alpha2
+    }
+    current_crops
+    locations
+  }
+}",https://landmatrix.org/api/deals/?country_id=76&crops=SOY
+Show me all deals.,"query Data {
+  deals {
+    id
+    country{id, name}
+  }
+}",https://landmatrix.org/api/deals/
+Where are the deals between 200 ha and 500 ha?,"query Data {
+  deals(
+    limit: 50,
+    filters: [
+      {field: ""deal_size"", operation: GE, value: 200},
+      {field: ""deal_size"", operation: LE, value: 500}
+    ]
+  ) {
+    id
+    country {id name code_alpha3}
+    deal_size
+  }
+}",https://landmatrix.org/api/deals/?area_min=200&area_max=500
+How many agriculture deals are between 200 ha and 900 ha in Africa?,"query Data {
+  deals(
+    filters: [
+      {field: ""current_intention_of_investment"",
+      operation: OVERLAP,
+      value: [""BIOFUELS"", ""BIOMASS_ENERGY_GENERATION"", ""FODDER"", ""FOOD_CROPS"", ""LIVESTOCK"", ""NON_FOOD_AGRICULTURE"", ""AGRICULTURE_UNSPECIFIED""]}
+    ]
+  ) { 
+           id
+    country {
+      id
+      name
+      code_alpha2
+    }
+    current_intention_of_investment
+  }
+}",https://landmatrix.org/api/deals/?intention_of_investment=AGRICULTURE_UNSPECIFIED&intention_of_investment=BIOMASS_ENERGY_GENERATION&intention_of_investment=FODDER&intention_of_investment=FOOD_CROPS&intention_of_investment=LIVESTOCK&intention_of_investment=NON_FOOD_AGRICULTURE&region.id=2&area_min=200&area_max=900
+Show me the biggest deals in Asia.,"query Data {
+  deals(
+    filters: [
+      {field: ""country.region.id"", operation: EQ, value: 142 }
+    ]
+  ) { 
+           id
+    country {
+      id
+      name
+      code_alpha2
+      region {id name}
+    }
+    deal_size
+  }
+}",https://landmatrix.org/api/deals/?region_id=142
+Where are the biggest mines?,"query Data {
+  deals(
+    filters: [
+      {field: ""current_intention_of_investment"" operation: CONTAINS, value: ""MINING"" }
+    ]
+  ) { 
+           id
+    country {
+      id
+      name
+      code_alpha2
+      region {id name}
+    }
+    current_intention_of_investment
+  }
+}",https://landmatrix.org/api/deals/?intention_of_investment=MINING
+Who invests in deals below 500 ha?,"query Data {
+  deals(
+    filters: [
+      {field: ""deal_size"", operation: LE, value: 500}
+    ]
+  ) {
+    id
+    country {id name}
+    deal_size
+    top_investors {id name}
+  }
+}",https://landmatrix.org/api/deals/?area_max=500
+"Where are the investments in South Africa, Senegal and Ghana?","query Data {
+  deals(
+    filters: [
+      {field: ""country.id"", operation: IN, value: [710, 686, 288]}
+    ]
+  ) {
+    id
+    country {
+      id
+      name
+    }
+  }
+}",https://landmatrix.org/api/deals/?country_id=710&country_id=686&country_id=288
+What are the types of investments in operation in Russia and Ukraine?,"query Data {
+  deals(
+    filters: [
+      {field: ""country.id"", operation: IN, value: [643, 804]}
+    ]
+  ) {
+    id
+    country {
+      id
+      name
+    }
+    current_intention_of_investment
+  }
+}",https://landmatrix.org/api/deals/?country_id=643&country_id=804
+Is mineral extracted from Vietnam or Malaysia?,"query Data {
+  deals(
+    filters: [
+      {field: ""country.id"", operation:IN , value: [704, 458]},
+      {field: ""current_intention_of_investment"", operation:OVERLAP , value: [""MINING""]}
+    ]
+  ) {
+    id
+    country {
+      id
+      name
+    }
+    current_intention_of_investment
+    current_mineral_resources
+  }
+}",https://landmatrix.org/api/deals/?country_id=458&country_id=704&intention_of_investment=MINING
+Show me the deals related to renewable energies in Mozambique.,"query Data {
+  deals(
+    filters: [
+      {field: ""country.id"", operation:EQ , value: ""508""},
+      {field: ""current_intention_of_investment"", operation: OVERLAP, value: [""SOLAR_PARK"", ""WIND_FARM"", ""RENEWABLE_ENERGY""]}
+    ]
+  ) {
+    id
+    country {
+      id
+      name
+    }
+    current_intention_of_investment
+  }
+}",https://landmatrix.org/api/deals/?country_id=508&intention_of_investment=SOLAR_PARK&intention_of_investment=WIND_FARM&intention_of_investment=RENEWABLE_ENERGY
+Where are the mines in Africa and Latin America?,"query Data {
+  deals(
+    filters: [
+      {field: ""country.region.id"", operation:IN , value: [2, 419]},
+      {field: ""current_intention_of_investment"", operation: OVERLAP, value: [""MINING""]}
+    ]
+  ) {
+    id
+    country {
+      id
+      name
+      region {id name}
+    }
+    current_intention_of_investment
+  }
+}",https://landmatrix.org/api/deals/?region_id=2&region_id=419&intention_of_investment=MINING
