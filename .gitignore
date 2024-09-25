@@ -4,3 +4,4 @@ output/O*
 output/o*
 src/__pycache__/
 logs/*.log
+streamlit_chatbot_landmatrix/__pycache__/

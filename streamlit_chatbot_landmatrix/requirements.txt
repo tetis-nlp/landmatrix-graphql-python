@@ -3,3 +3,9 @@ pandas==2.2.2
 plotly
 langchain-core==0.3.2
 langchain-community==0.3.0
+langchain-openai==0.2.0
+transformers==4.44.2
+sentence-transformers==3.0.1
+scikit-learn==1.5.1
+spacy==3.7.2
+faiss-cpu==1.8.0.post1
