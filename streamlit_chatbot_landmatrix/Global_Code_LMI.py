@@ -289,7 +289,7 @@ def Recevoir_Entities(data_dict, question):
                 if result:
                     all_values.append(result)   
                     
-            elif entity == "current_intention" or entity == "implementation_status" or entity == "crops" or entity == "animals" or entity == "minerals" or entity == "nature_of_deal" or entity == "negative_impacts" or entity == "former_land_cover" or entity == "Agriculture" or entity == "Forestry" or entity == "MINING":
+            elif entity == "current_intention" or entity == "implementation_status" or entity == "crops" or entity == "animals" or entity == "minerals" or entity == "nature" :
                 if value != "INVESTMENT":
                     FormField = FormFields(entity)
                     all_values.append(FormField)
