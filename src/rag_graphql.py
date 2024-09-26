@@ -179,6 +179,7 @@ def ChatBot_response( llm, parser, context, question):
     if response is None:
         response = modele_llm(question, llm, parser, context, retries=3, delay=5)
         
+    response = re.sub(r'\\', '', response) 
     return response
 
 
