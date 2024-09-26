@@ -6,6 +6,7 @@ parser.add_argument('--api_jwt', type=str, required=True, help='Your ISDM JWT')
 parser.add_argument('--model', type=str, default="solidrust/Codestral-22B-v0.1-hf-AWQ")
 args = parser.parse_args()
 
+import time
 import logging
 logging.basicConfig(
     filename='logs/pipeline.log',  # Name of the log file
@@ -87,26 +88,38 @@ prompt = PromptTemplate.from_template(template)
 ### Generate responses
 #---------------------
 
-def modele(question,prompt,model,parser, context):
-
+def modele(question, prompt, model, parser, context, retries=3, delay=5):
     chain = prompt | model | parser
-    try:
-        result = chain.invoke({"context": context, "question": question})
-    except Exception as e:
-        logging.error(f'{str(__file__).split("/")[-1]} | {args.model} | {model_short_name}: Inference error: {e}')
-        result = "none"
-
-    return result
+    
+    for attempt in range(retries):
+        try:
+            result = chain.invoke({"context": context, "question": question})
+            return result
+        except ValueError as e:
+            # Handle the 504 Gateway Time-out error
+            if '504 Gateway Time-out' in str(e):
+                logging.error(f"Attempt {attempt + 1} failed with timeout error. Retrying in {delay} seconds...")
+                time.sleep(delay)
+            else:
+                logging.error(f'Unexpected error: {e}')
+                raise  # Re-raise the error if it's not a timeout error
+        except Exception as e:
+            # Log other exceptions
+            logging.error(f'{str(__file__).split("/")[-1]} | {args.model} | {model_short_name}: Inference error: {e}')
+            time.sleep(delay)  # Introduce a delay before retrying
+    
+    # Raise an exception after max retries are exceeded
+    raise ValueError("Max retries exceeded with timeout errors.")
 
 def add_responses_to_excel(df, prompt, model, parser, context):
     df['Predict_Query'] = ''
 
     for index, row in df.iterrows():
         question = row['question']
-        response = modele(question, prompt, llm, parser, context)
+        response = modele(question, prompt, model, parser, context, retries=3, delay=5)
         response = re.sub(r'\\', '', response)
         while response is None:
-            response = modele(question, prompt, model, parser, context)
+            response = modele(question, prompt, model, parser, context, retries=3, delay=5)
             response = re.sub(r'\\', '', response)
         df.at[index, 'Predict_Query'] = response
     return df
