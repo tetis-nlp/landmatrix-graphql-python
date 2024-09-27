@@ -1,5 +1,5 @@
 # Help with querying the *Land Matrix* database via Python
-[![Land Matrix](https://landmatrix.org/images/lm-logo-dark.png)](https://landmatrix.org/)
+[![Land Matrix](logo_lm.png)](https://landmatrix.org/)
 
 This project aims to facilitate the retrieval of Land Matrix data through natural language queries.
 
