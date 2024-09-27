@@ -202,7 +202,6 @@ def response(data, llm, parser, context):
             counter += 1
                     
         data.at[index, 'response'] = response
-    data.to_excel(f"output/OUTPUT_RAG_GraphQL_{model_short_name}.xlsx", index=False)
     try:
         data.to_excel(f"output/output_rag_graphql_{model_short_name}.xlsx", index=False)  
         logging.info(f'{str(__file__).split("/")[-1]} | {args.model} | {model_short_name} Finished with {len(data)} queries processed')

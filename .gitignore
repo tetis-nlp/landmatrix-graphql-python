@@ -2,6 +2,7 @@ credentials.ini
 .vscode
 output/O*
 output/o*
+output_*
 src/__pycache__/
 logs/*.log
 streamlit_chatbot_landmatrix/__pycache__/
