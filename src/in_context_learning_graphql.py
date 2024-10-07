@@ -129,6 +129,10 @@ def add_responses_to_excel(df, prompt, model, parser, context):
 
 data_response = add_responses_to_excel(df, prompt, llm, parser, context)
 try:
+    import socket
+    from datetime import datetime
+    hostname = socket.gethostname()
+    current_time = datetime.now().strftime("%Y%m%d_%H%M%S")
     data_response.to_excel(f"output/output_incontext_graphql_{model_short_name}.xlsx", index=False)
     logging.info(f'{str(__file__).split("/")[-1]} | {args.model} | {model_short_name} Finished with {len(data_response)} queries processed')
 except Exception as e:
