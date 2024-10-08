@@ -23,6 +23,10 @@ from langchain_core.output_parsers import StrOutputParser
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+import socket
+from datetime import datetime
+hostname = socket.gethostname()
+current_time = datetime.now().strftime("%Y%m%d_%H%M%S")
 import Context_REST
 from langchain_openai import ChatOpenAI
 
@@ -138,11 +142,9 @@ def add_responses_to_excel(df, prompt, model, parser, context):
 
 data_response = add_responses_to_excel(df, prompt, llm, parser, context)
 try:
-    import socket
-    from datetime import datetime
-    hostname = socket.gethostname()
-    current_time = datetime.now().strftime("%Y%m%d_%H%M%S")
-    data_response.to_excel(f"output/output_incontext_rest_{model_short_name}.xlsx", index=False)
+    directory_name = f"output/{current_time}_{hostname}"
+    os.makedirs(directory_name, exist_ok=True)
+    data_response.to_excel(f"{directory_name}/output_incontext_rest_{model_short_name}_{hostname}_{current_time}.xlsx", index=False)
     logging.info(f'{str(__file__).split("/")[-1]} | {args.model} | {model_short_name} Finished with {len(data_response)} queries processed')
 except Exception as e:
     logging.error(f'{str(__file__).split("/")[-1]}  | {args.model} Saving file: {e}')

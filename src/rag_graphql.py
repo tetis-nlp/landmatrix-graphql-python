@@ -33,6 +33,10 @@ from sklearn.metrics.pairwise import cosine_similarity
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+import socket
+from datetime import datetime
+hostname = socket.gethostname()
+current_time = datetime.now().strftime("%Y%m%d_%H%M%S")
 import Context_GraphQL
 import faiss
 import numpy as np
@@ -203,11 +207,9 @@ def response(data, llm, parser, context):
                     
         data.at[index, 'response'] = response
     try:
-        import socket
-        from datetime import datetime
-        hostname = socket.gethostname()
-        current_time = datetime.now().strftime("%Y%m%d_%H%M%S")
-        data.to_excel(f"output/output_rag_graphql_{model_short_name}.xlsx", index=False)  
+        directory_name = f"output/{current_time}_{hostname}"
+        os.makedirs(directory_name, exist_ok=True)
+        data.to_excel(f"{directory_name}/output_rag_graphql_{model_short_name}_{hostname}_{current_time}.xlsx", index=False)  
         logging.info(f'{str(__file__).split("/")[-1]} | {args.model} | {model_short_name} Finished with {len(data)} queries processed')
     except Exception as e:
         logging.error(f'{str(__file__).split("/")[-1]}  | {args.model} Saving file: {e}')

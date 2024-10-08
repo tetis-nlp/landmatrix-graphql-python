@@ -41,6 +41,10 @@ import faiss
 import numpy as np
 import time
 from tqdm import tqdm
+import socket
+from datetime import datetime
+hostname = socket.gethostname()
+current_time = datetime.now().strftime("%Y%m%d_%H%M%S")
 
 if args.model == "solidrust/Codestral-22B-v0.1-hf-AWQ": 
     OPENAI_API_KEY = args.api_jwt
@@ -506,11 +510,9 @@ def response(data, llm, parser):
                     
         data.at[index, 'Predict_Query'] = response
     try:
-        import socket
-        from datetime import datetime
-        hostname = socket.gethostname()
-        current_time = datetime.now().strftime("%Y%m%d_%H%M%S")
-        data.to_excel(f"output/output_agent_rest_{model_short_name}_{hostname}_{current_time}.xlsx", index=False)  
+        directory_name = f"output/{current_time}_{hostname}"
+        os.makedirs(directory_name, exist_ok=True)
+        data.to_excel(f"{directory_name}/output_agent_rest_{model_short_name}_{hostname}_{current_time}.xlsx", index=False)  
         logging.info(f'{str(__file__).split("/")[-1]} | {args.model} | {model_short_name} Finished with {len(data)} queries processed')
     except Exception as e:
         logging.error(f'{str(__file__).split("/")[-1]}  | {args.model} Saving file: {e}')
