@@ -175,6 +175,37 @@ def modele_llm(question, llm, parser, context, retries=3, delay=5):
     
     raise ValueError("Max retries exceeded with timeout errors.")
 
+def clean_graphql_query(query_string):
+    # Find the start of the query
+    start_index = query_string.find("query Data")
+    if start_index == -1:
+        return None  # Return None if "query Data" is not found
+    
+    # Extract the relevant part of the string
+    query_part = query_string[start_index:]
+    
+    # Initialize counters for braces
+    open_braces = 0
+    close_braces = 0
+    end_index = -1
+    
+    # Iterate through the string to find matching braces
+    for i, char in enumerate(query_part):
+        if char == '{':
+            open_braces += 1
+        elif char == '}':
+            close_braces += 1
+        
+        # Check if the number of opening and closing braces match
+        if open_braces > 0 and open_braces == close_braces:
+            end_index = i + 1  # Include the closing brace
+            break
+    
+    # Return the cleaned query
+    if end_index != -1:
+        return query_part[:end_index].strip()
+    
+    return None  # Return None if there is no matching closing brace
 
 # Return Response
 def ChatBot_response( llm, parser, context, question):
@@ -182,7 +213,8 @@ def ChatBot_response( llm, parser, context, question):
     response = modele_llm(question, llm, parser, context, retries=3, delay=5)
     if response is None:
         response = modele_llm(question, llm, parser, context, retries=3, delay=5)
-        
+
+    response = clean_graphql_query(response)
     response = re.sub(r'\\', '', response) 
     return response
 
