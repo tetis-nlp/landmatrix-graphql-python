@@ -130,9 +130,9 @@ def add_responses_to_excel(df, prompt, model, parser, context):
 
     for index, row in df.iterrows():
         question = row['question']
-        response = modele(question, prompt, model, parser, context, retries=3, delay=5)
+        response = modele(question, prompt, model, parser, context, retries=10, delay=5)
         while response is None:
-            response = modele(question, prompt, model, parser, context, retries=3, delay=5)
+            response = modele(question, prompt, model, parser, context, retries=10, delay=5)
         response = extract_first_rest_request(response)
         df.at[index, 'Predict_Query'] = response
     return df
