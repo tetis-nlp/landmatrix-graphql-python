@@ -242,7 +242,7 @@ def calculate_metrics(df):
     
     precision = true_positives / (true_positives + false_positives)
     recall = true_positives / (true_positives + false_negatives)
-    accuracy = true_positives / len(df)
+    accuracy = true_positives / (true_positives + false_negatives + false_positives)
     
     f1_score = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0
     
