@@ -54,6 +54,14 @@ python src/experiments.py
 - *Monitore your pipeline* : `tail -f logs/pipeline.log`
 - *Stop the pipeline: Kill all the subprocess*: `pkill -f src/`
 
+## 3. Citing this work
+
+| Publication Type        | language               | Link                                                   |
+|-------------------------|------------------------|--------------------------------------------------------|
+| Preprint (Arxiv)        | English version        | [Link](https://arxiv.org/abs/2412.12961)               |
+| EGC'2025                | French version         | [Link](https://editions-rnti.fr/?inprocid=1003003)     |
+
+
 
 
 
